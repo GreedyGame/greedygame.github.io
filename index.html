@@ -13,13 +13,13 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <title>Greedygame.GitHub.io by GreedyGame</title>
+    <title>GREEDYGAME INTEGRATION GUIDE by GreedyGame</title>
   </head>
 
   <body>
     <header>
       <div class="inner">
-        <h1>Greedygame.GitHub.io</h1>
+        <h1>GREEDYGAME INTEGRATION GUIDE</h1>
         <h2>Ads that people love !</h2>
         <a href="https://github.com/GreedyGame" class="button"><small>Follow me on</small> GitHub</a>
       </div>
@@ -28,66 +28,93 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-          <p>GREEDYGAME - INTEGRATION GUIDE
-Ads that people love</p>
+          <h2>
+<a id="greedygame---integration-guide" class="anchor" href="#greedygame---integration-guide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>GREEDYGAME - INTEGRATION GUIDE</h2>
 
-<p>How to start Monetizing with GreedyGame :<br>
-Signup : 
+<h5>
+<a id="ads-that-people-love" class="anchor" href="#ads-that-people-love" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Ads that people love</h5>
+
+<h4>
+<a id="how-to-start-monetizing-with-greedygame-" class="anchor" href="#how-to-start-monetizing-with-greedygame-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to start Monetizing with GreedyGame :</h4>
+
+<p><strong>Signup :</strong> 
 Go to publisher.greedygame.com and signup for a greedygame account. The account will be verified and notified in your registered mail. If you are facing any issues to signup you can always write to <a href="mailto:support@greedygame.com">support@greedygame.com</a>. </p>
 
-<p>Create a game-id : As shown in the screenshot click on AdUnit tab and press create new game. Fill in all the details. This will create a new game profile id which needs to be used at the time of
-integration.
-NB: if the game is not yet in playstore then you can use a dummy URL instead of playstore URL.</p>
+<p><strong>Create a game-id :</strong> As shown in the screenshot click on AdUnit tab and press create new game. Fill in all the details. This will create a new game profile id which needs to be used at the time of
+integration.</p>
 
-<p>Identifying good ad-spots and uploading assets : Upload the textures used in your game after you create the game id. You can refer figure 2 point no. 4 for doing this. For each screen that needs a FloatAd unit create a seperate float unit by clicking on create float unit button as shown at point 3.</p>
+<blockquote>
+<p>NB: if the game is not yet in playstore then you can use a dummy URL instead of playstore URL.</p>
+</blockquote>
 
+<p><strong>Identifying good ad-spots and uploading assets :</strong> Upload the textures used in your game after you create the game id. You can refer figure 2 point no. 4 for doing this. For each screen that needs a FloatAd unit create a seperate float unit by clicking on create float unit button as shown at point 3.</p>
+
+<blockquote>
 <p>NB : Note down the unit-id generated when you uploaded the textures and the float-id’s that were generated. </p>
+</blockquote>
 
-<p>Lets familiarize the following terms 
-Native-Units : The non clickable textures inside your game that is dynamically branded at runtime. The native unit is directly blended into the in-game textures, so as shown in the figure the size and the overall look and feel of the texture is not changed but rather the ad is blended seamlessly.
+<h3>
+<a id="lets-familiarize-the-following-terms" class="anchor" href="#lets-familiarize-the-following-terms" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Lets familiarize the following terms</h3>
+
+<p><strong>Native-Units :</strong> The non clickable textures inside your game that is dynamically branded at runtime. The native unit is directly blended into the in-game textures, so as shown in the figure the size and the overall look and feel of the texture is not changed but rather the ad is blended seamlessly.
 Float-Units : The clickable ad unit from GreedyGame. On click of this button a window opens which basically displays HTML pages. The size shape and position of the float units are dynamic which means it can always be changed from the server side.</p>
 
-<p>Without Ads
-With Greedy Game Ads</p>
+<p><strong>Engagement Window :</strong> Engagement window is basically a web view activity that displays a webpage, that opens upon clicking the float unit. 
+<strong>Campaigns :</strong> For clarity during integration lets just think of it as active ads. Campaign is available means ads are available and Campaign Not available means ads are not available. 
+                 .                            </p>
 
-<p>Engagement Window : Engagement window is basically a web view activity that displays a webpage, that opens upon clicking the float unit. 
-Campaigns : For clarity during integration lets just think of it as active ads. Campaign is available means ads are available and Campaign Not available means ads are not available. 
-            LETS START CREATING ADS THAT PEOPLE LOVE          .<br>
-GreedyGame helps you monetize in the following 3 platforms. Select your platform 
-UNITY<br>
-NATIVE<br>
-COCOS</p>
+<h3>
+<a id="greedygame-helps-you-monetize-in-the-following-3-platforms-select-your-platform" class="anchor" href="#greedygame-helps-you-monetize-in-the-following-3-platforms-select-your-platform" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>GreedyGame helps you monetize in the following 3 platforms. Select your platform</h3>
 
-<p>ARE YOU FACING ISSUES AFTER INTEGRATION ? 
-If you have already integrated the SDK after going through the integration guide and still if you face trouble or if you are stuck with something then verify the integration using the following forms. 
-VERIFYING INTEGRATION
-VERIFY UNITY 
-VERIFY NATIVE 
-VERIFY COCOS 
-Remember and come back to this verification part if you face troubles after integration.
-PROGUARD SETTINGS
-RECOMMENDED MANIFEST CHANGE</p>
+<ul>
+<li>UNITY<br>
+</li>
+<li>NATIVE<br>
+</li>
+<li>COCOS</li>
+</ul>
 
-<p>NATIVE INTEGRATION GUIDE</p>
+<h3>
+<a id="are-you-facing-issues-after-integration--" class="anchor" href="#are-you-facing-issues-after-integration--" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>*<em>ARE YOU FACING ISSUES AFTER INTEGRATION ? *</em>
+</h3>
 
-<p>BASIC SETUP
-INITIALIZATION OF SDK
-NATIVE AD UNIT INTEGRATION
-FLOAT AD UNIT INTEGRATION
-OTHER UTILITIES METHOD</p>
+<p>If you have already integrated the SDK after going through the integration guide and still if you face trouble or if you are stuck with something then verify the integration using the following forms. </p>
 
-<p>ECLIPSE : If you are developing the native android project using eclipse then download the SDK from the following link and import the greedy-android-agent project and add it as a library to your project. </p>
+<h4>
+<a id="verifying-integration" class="anchor" href="#verifying-integration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>VERIFYING INTEGRATION</h4>
 
-<p>ANDROID STUDIO :  If you are on ANDROID STUDIO then find the aar of our SDK inside android-studio-aar folder and then import it as a module and then add it as a dependency to your project.</p>
+<ul>
+<li>VERIFY UNITY </li>
+<li>VERIFY NATIVE </li>
+<li>VERIFY COCOS 
+Remember and come back to this verification part if you face troubles after integration.</li>
+<li>PROGUARD SETTINGS</li>
+<li>RECOMMENDED MANIFEST CHANGE</li>
+</ul>
 
-<p>MANIFEST REQUIREMENTS : Add these to your projects manifest file.</p>
+<h3>
+<a id="native-integration-guide" class="anchor" href="#native-integration-guide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NATIVE INTEGRATION GUIDE</h3>
 
-<p>BASIC SETUP :  </p>
+<ul>
+<li>BASIC SETUP</li>
+<li>INITIALIZATION OF SDK</li>
+<li>NATIVE AD UNIT INTEGRATION</li>
+<li>FLOAT AD UNIT INTEGRATION</li>
+<li>OTHER UTILITIES METHOD</li>
+</ul>
 
-<p>GAME PROFILE ID : Put your gameprofile id generated in this step into the Android xml values as string as shown below.
+<p><strong>ECLIPSE :</strong> If you are developing the native android project using eclipse then download the SDK from the following link and import the greedy-android-agent project and add it as a library to your project. </p>
 
-            11111111
-    </p>
+<p><strong>ANDROID STUDIO :</strong>  If you are on ANDROID STUDIO then find the aar of our SDK inside android-studio-aar folder and then import it as a module and then add it as a dependency to your project.</p>
+
+<p><strong>MANIFEST REQUIREMENTS :</strong> Add these to your projects manifest file.</p>
+
+<p>*<em>BASIC SETUP : *</em> </p>
+
+<p><strong>GAME PROFILE ID :</strong> Put your gameprofile id generated in this step into the Android xml values as string as shown below.
+<code>&lt;resources&gt;</code>
+            <code>&lt;string name="greedy_game_profile"&gt;11111111&lt;/string&gt;</code>
+    <code>&lt;/resources&gt;</code></p>
 
 <p>INITIALIZATION OF SDK</p>
 
