@@ -36,19 +36,6 @@ function changeColor() {
 function changeColorBack() {
   document.getElementById("issuesInIntegration").style.color = "#818181";
 }
-
-function displayMenu() {
-  document.getElementById("initialSetupList").style.display = "inline";
-  document.getElementById("initialSetupList").style.visibility = "visible";
-   document.getElementById("initialSetupList").style.width = "250px";
-}
-
-function hideMenu() {
-  document.getElementById("initialSetupList").style.display = "hidden";
-  document.getElementById("initialSetupList").style.visibility = "visible";
-  document.getElementById("initialSetupList").style.width = "0px";
-}
-
 </script>
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -59,16 +46,7 @@ function hideMenu() {
   
 
   <div id = "initialSetupNavi" onmouseover="displayMenu()" onmouseout="hideMenu()">
-  <a href="#how-to-start-monetizing-with-greedygame-" >Initial Setup  </a>
-  
-  <div id="initialSetupList" display="none" visibility="hidden">
-  <a href="#" >Design</a>
-                <a href="#" visibility="inherit">HTML</a>
-                <a href="#" visibility="inherit">CSS</a>
-                <a href="#" visibility="inherit">JavaScript</a>
-                 </div>
-</div>
- 
+  <a href="#how-to-start-monetizing-with-greedygame-" >Initial Setup</a>
   <a href="#verifying-integration">Verify Integration</a>
   <a href="#native-integration-guide">Native Integration</a>
   <a href="#">Cocos Integration</a>
@@ -77,7 +55,7 @@ function hideMenu() {
   <a href="#verifying-integration" onmouseover="changeColor()" onmouseout="changeColorBack()"  id="issuesInIntegration">Issues in Integration</a>
 
 </div>
-
+</div>
 
 
   <title>GREEDYGAME INTEGRATION GUIDE by GreedyGame</title>
@@ -137,7 +115,6 @@ Float-Units : The clickable ad unit from GreedyGame. On click of this button a w
 
 <ul>
 <li>
-<a href="#native-integration-guide">NATIVE</a>
 UNITY<br>
 </li>
 <li>NATIVE<br>
@@ -155,9 +132,9 @@ UNITY<br>
 <a id="verifying-integration" class="anchor" href="#verifying-integration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>VERIFYING INTEGRATION</h4>
 
 <ul>
-<li>VERIFY UNITY </li>
-<li>VERIFY NATIVE </li>
-<li>VERIFY COCOS 
+<li><a href="#http://goo.gl/forms/RRz4e4g3coEtjIcz2">VERIFY UNITY </a>  </li>
+<li><a href="#http://goo.gl/forms/RRz4e4g3coEtjIcz2">VERIFY NATIVE </a>  </li>
+<li><a href="#http://goo.gl/forms/RRz4e4g3coEtjIcz2">VERIFY COCOS </a>  </li>
 Remember and come back to this verification part if you face troubles after integration.</li>
 <li>PROGUARD SETTINGS</li>
 <li>RECOMMENDED MANIFEST CHANGE</li>
@@ -180,72 +157,76 @@ Remember and come back to this verification part if you face troubles after inte
 
 <p><strong>MANIFEST REQUIREMENTS :</strong> Add these to your projects manifest file.</p>
 
-<p>*<em>BASIC SETUP : *</em> </p>
+<p><em>BASIC SETUP : </em> </p>
 
 <p><strong>GAME PROFILE ID :</strong> Put your gameprofile id generated in this step into the Android xml values as string as shown below.
 <code>&lt;resources&gt;</code>
             <code>&lt;string name="greedy_game_profile"&gt;11111111&lt;/string&gt;</code>
     <code>&lt;/resources&gt;</code></p>
 
-<p>INITIALIZATION OF SDK</p>
+<p><strong>INITIALIZATION OF SDK</strong></p>
 
-<p>GreedyGameAgent - Install : Install the GreedygameAgent in splash screen activity's ( launcher activity ) onCreate() method.
-public static GreedyGameAgent install(Activity activity, IAgentListener agentListener);
-GreedyGameAgent ggAgent = GreedyGameAgent.install(this,listener);
-GreedyGameAgent - Callbacks From IAgentListener
-IMPORTANT : Find the seperate section detailing about IAgentListener  here. 
-GreedyGameAgent - init() : Initialize GreedyGameAgent and notify it regarding the assets that you are going to use in your game.
-Step 1 : Create an array of units that you are using inside your game like shown below. You should be adding both the floatunits and the native units to the array. There are two ways of using the native units as shown in example 1 and 2 respectively.
-Step 2 : Call init() function of GreedyGameAgent with the string array you have created and also specify the type of download you want to use.
+<p>
+<strong>GreedyGameAgent - Install :</strong> Install the GreedygameAgent in splash screen activity's ( launcher activity ) onCreate() method.
+
+<code>&lt;public static GreedyGameAgent install(Activity activity, IAgentListener agentListener);&gt;</code>
+<code>&lt;GreedyGameAgent ggAgent = GreedyGameAgent.install(this,listener); &gt;</code>
+<p><strong>GreedyGameAgent - Callbacks From IAgentListener</strong></p>
+<strong>IMPORTANT :</strong> Find the seperate section detailing about IAgentListener  here. 
+</p>
+
+<strong>GreedyGameAgent - init() :<strong> Initialize GreedyGameAgent and notify it regarding the assets that you are going to use in your game.
+<strong>Step 1 :</strong> Create an array of units that you are using inside your game like shown below. You should be adding both the floatunits and the native units to the array. There are two ways of using the native units as shown in example 1 and 2 respectively.
+<strong>Step 2 :</strong> Call init() function of GreedyGameAgent with the string array you have created and also specify the type of download you want to use.
 Example 1 : ( If you want to download the native units by ID )
-String[] units = {"unit-1522","unit-1941","float-1744","float-1743"};
-ggAgent.init(units, FetchType.DOWNLOAD_BY_ID);
+<code>&lt;String[] units = {"unit-1522","unit-1941","float-1744","float-1743"};&gt;</code>
+<code>&lt;ggAgent.init(units, FetchType.DOWNLOAD_BY_ID);&gt;</code>
 Example 2 : (If you want to download native units by path )
-String[] units = {"sun.png","moon.png","float-1744","float-1743"};
-ggAgent.init(units, FetchType.DOWNLOAD_BY_PATH);
+<code>&lt;String[] units = {"sun.png","moon.png","float-1744","float-1743"};&gt;</code>
+<code>&lt;ggAgent.init(units, FetchType.DOWNLOAD_BY_PATH);&gt;</code>
 NOTE 
 1. Float units are always passed with ID's. 
 2. For each native unit that you upload to panel.greedygame.com a particular unit-id is generated. Use those ID's while DOWNLOADING_BY_ID. 
 3. Call ggAgent.init() function only inside onCreate of your starting activity.</p>
 
-<p>NATIVE AD UNIT INTEGRATION : </p>
+<h2>NATIVE AD UNIT INTEGRATION : </h2>
 
 <p>During init call we did during initialization we are actually marking all assets that needs to be branded. So in case there is a campaign available, the relevent native units will be downloaded and kept at a certain folder inside the memory of the device. So all you need to do is 
 Check whether a campaign is available using function 1 shown below.
 If a campaign is available replace the texture as shown in snippet 1 using function 2.
-Function 1 : public String activeCampaign() : Returns campaign id of currently active and running campaign on device.
-Function 2 : public String getActivePath() :Return path of folder, where assets of activeCampaign is stored. You can use this method to actually replace the default unit with branded texture !</p>
+Function 1 : <code>&lt;public String activeCampaign()&gt;</code> : Returns campaign id of currently active and running campaign on device.
+Function 2 : <code>&lt;public String getActivePath()&gt;</code> :Return path of folder, where assets of activeCampaign is stored. You can use this method to actually replace the default unit with branded texture !</p>
 
 <p>SNIPPET 1 :
-private Bitmap getBitmapByResName(GreedyGameAgent ggAgent, String resName) {
-File file = new File(SplashScreenActivity.ggAgent.getActivePath()+ "/" + resName);
-if (file.exists()) {
-       return BitmapFactory.decodeFile(file.getAbsolutePath());
-    }
-return null;
-    }
+<code>&lt;private Bitmap getBitmapByResName(GreedyGameAgent ggAgent, String resName) {&gt;</code>
+<code>&lt;File file = new File(SplashScreenActivity.ggAgent.getActivePath()+ "/" + resName);&gt;</code>
+<code>&lt;if (file.exists()) {&gt;</code>
+       <code>&lt;return BitmapFactory.decodeFile(file.getAbsolutePath());&gt;</code>
+    <code>&lt;}&gt;</code>
+<code>&lt;return null;&gt;</code>
+    <code>&lt;}&gt;</code>
 The above snippet will check if a branded unit is available with the name "resName". At runtime you can replace your default texture with the branded texture using this utility function as shown below.
-ImageView home = (ImageView) findViewById(R.id.player);
-             Bitmap bmp2 = getBitmapByResName(GreedyGameAgent.getInstance(), "unit-1941");
-             home.setImageBitmap(bmp2);
+<code>&lt;ImageView home = (ImageView) findViewById(R.id.player);&gt;</code>
+             <code>&lt;Bitmap bmp2 = getBitmapByResName(GreedyGameAgent.getInstance(), "unit-1941");&gt;</code>
+             <code>&lt;home.setImageBitmap(bmp2);&gt;</code>
 Note : getActivePath will return null if there is no active theme</p>
 
-<p>FLOAT-AD-UNIT INTEGRATION :</p>
+<p><h3><strong>FLOAT-AD-UNIT INTEGRATION :</p></h3></strong>
 
 <p>Initializing FloatAdLayout(Context context)
 Constructs a new instance of FloatAdLayout. Remember to add it to the current activity context as shown in the code snippet below.
-FloatAdLayout floatAdLayout = new FloatAdLayout(context);
-FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
-                LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-        this.addContentView(floatAdlayout, params);
+<code>&lt;FloatAdLayout floatAdLayout = new FloatAdLayout(context);&gt;</code>
+<code>&lt;FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(&gt;</code>
+                <code>&lt;LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);&gt;</code>
+        <code>&lt;this.addContentView(floatAdlayout, params);&gt;</code>
 Display float unit :  Once you have initialized floatAdLayout use the following function to display float-ad-unit.
 Function 1 : public void fetchHeadAd(String unit_id) throws AgentInitNotCalledException
 Whenever you need to display a float-unit ( clickable unit ) use this function as shown in the snippet below. ( Replace “float-100”  with the appropriate float unit in your game )
-SNIPPET 1: floatAdLayout.fetchHeadAd(“float-100”);
+SNIPPET 1: <code>&lt;floatAdLayout.fetchHeadAd(“float-100”);&gt;</code>
 unit_id - Float unit id from panel.greedygame.com (e.g 'float-123')
 Remove float unit : Whenever you need to hide a float-unit or if you need to load a new float unit then call the below function to remove the previous float unit from screen ! Also make sure that the new float unit that needs to be displayed is fetched after removing the previous float.
 /*** Fetching Float Ad unit ***/
-    floatAdlayout.remove();
+    <code>&lt;floatAdlayout.remove();&gt;</code>
 OTHER UTILITIES METHOD : </p>
 
 <p>Set sdk into debug mode
