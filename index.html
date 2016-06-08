@@ -4,42 +4,85 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arya' rel='stylesheet' type='text/css'>
     <script src="/javascripts/main.js" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+     <link rel="stylesheet" type="text/css" href="stylesheets/greedy-custom.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
 
+<script>
+function openNav() {
+
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("hoverhelper").style.width = "0px";
+    document.getElementById("main").style.marginLeft = "250px";
+    
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+     
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("hoverhelper").style.width = "60px";
+    document.getElementById("main").style.marginLeft = "0px";
+}
+
+/* Set the color to something else */
+function changeColor() {
+  document.getElementById("issuesInIntegration").style.color = "#f00";
+}
+
+function changeColorBack() {
+  document.getElementById("issuesInIntegration").style.color = "#818181";
+}
+
+function displayMenu() {
+  document.getElementById("initialSetupList").style.display = "inline";
+  document.getElementById("initialSetupList").style.visibility = "visible";
+   document.getElementById("initialSetupList").style.width = "250px";
+}
+
+function hideMenu() {
+  document.getElementById("initialSetupList").style.display = "hidden";
+  document.getElementById("initialSetupList").style.visibility = "visible";
+  document.getElementById("initialSetupList").style.width = "0px";
+}
+
+</script>
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-<ul.b>
-  <li><a href="#are-you-facing-issues-after-integration--">ISSUES</a></li>
-  <li><a href="#native-integration-guide">NATIVE</a></li>
-  <li><a href="#native-integration-guide">UNITY</a></li>
-  <li><a href="#native-integration-guide">COCOS</a></li>
-</ul.b>
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
+  
+
+  <div id = "initialSetupNavi" onmouseover="displayMenu()" onmouseout="hideMenu()">
+  <a href="#how-to-start-monetizing-with-greedygame-" >Initial Setup  </a>
+  
+  <div id="initialSetupList" display="none" visibility="hidden">
+  <a href="#" >Design</a>
+                <a href="#" visibility="inherit">HTML</a>
+                <a href="#" visibility="inherit">CSS</a>
+                <a href="#" visibility="inherit">JavaScript</a>
+                 </div>
+</div>
+ 
+  <a href="#verifying-integration">Verify Integration</a>
+  <a href="#native-integration-guide">Native Integration</a>
+  <a href="#">Cocos Integration</a>
+  <a href="#">Unity Integration</a>
+  <a href="#">Additional Tweaks</a>
+  <a href="#verifying-integration" onmouseover="changeColor()" onmouseout="changeColorBack()"  id="issuesInIntegration">Issues in Integration</a>
+
 </div>
 
-<!-- Use any element to open the sidenav -->
-<button onclick="openNav()">Click me</button>
 
 
-
-
-
-
-
-    <title>GREEDYGAME INTEGRATION GUIDE by GreedyGame</title>
+  <title>GREEDYGAME INTEGRATION GUIDE by GreedyGame</title>
   </head>
-
+<div id="main"
   <body>
     <header>
       <div class="inner">
@@ -48,6 +91,8 @@
         <a href="https://github.com/GreedyGame" class="button"><small>Follow me on</small> GitHub</a>
       </div>
     </header>
+<!-- Use any element to open the sidenav -->
+<button id="hoverhelper" onmouseover="openNav()" class = "myButton">MENU</button>
 
     <div id="content-wrapper">
       <div class="inner clearfix">
@@ -505,4 +550,5 @@ MANIFEST REQUIREMENTS : Add the following into the manifest of your project.
 
   
   </body>
+  </div>
 </html>
