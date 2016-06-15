@@ -13,6 +13,11 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
 
 <script>
+
+var isGameIDAvailable = false;
+
+
+
 function openNav() {
 
     document.getElementById("mySidenav").style.width = "250px";
@@ -134,6 +139,18 @@ integration.</p>
   <div id="caption"></div>
 </div>
 
+
+//alert box
+<div id="myAlertBox" class="ggalert">
+<!-- The Close Button -->
+  <span class="alertclose" onclick="document.getElementById('myAlertBox').style.display='none'">&times;</span>
+<a id="alertcontent" > </a>
+
+</div>
+
+
+
+//modal JS
 <script>
 //javascript for modal
 // Get the modal
@@ -157,6 +174,29 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
+
+
+//alertBox JS
+<script>
+//javascript for modal
+// Get the modal
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var ggAlert = document.getElementById('myAlertBox');
+var captionText = document.getElementById("alertcontent");
+function ggAlertDisplay(text) {
+
+    captionText.innerHTML = text;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("alertclose")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    ggAlert.style.display = "none";
+}
+</script>
+
 
 
 <script>
@@ -204,6 +244,11 @@ function test(elID)
 
 </ul>
 
+
+
+
+
+
 <h3><font size="+2" color="#f00">
 <a id="are-you-facing-issues-after-integration--" class="anchor" href="#are-you-facing-issues-after-integration--" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>*<em>ARE YOU FACING ISSUES AFTER INTEGRATION ? *</em>
 </font></h3>
@@ -246,9 +291,15 @@ Remember and come back to this verification part if you face troubles after inte
 
 <p><h3><strong>GAME PROFILE ID :</strong></h3> Put your gameprofile id generated in this step into the Android xml values as string as shown below.</p>
 
-<code>&lt;resources&gt;</code>
-            <code>&lt;string name="greedy_game_profile"&gt;11111111&lt;/string&gt;</code>
+<h4 id="gameidheading">If you have already generated the game id from panel please enter it here</h4>
+    <input type="text" id="gameidinput" autofocus value = "your game id" />
+    <input type="submit" value="OK" onclick="getGameID()" />
+
+<p><code>&lt;resources&gt;</code>
+            <code>&lt;string name="greedy_game_profile"&gt;<a id="gameidtext" >11111111</a>&lt;/string&gt;</code>
     <code>&lt;/resources&gt;</code></p>
+
+    <p><a id="gameidtext2" ></a> </p>
 
 <p><h3><strong><a id="native-initsdk" class="anchor" href="#native-initsdk" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>INITIALIZATION OF SDK</strong></h3></p>
 
@@ -669,15 +720,28 @@ To avoid this immediate activity creation and destroying overhead, add the follo
 </p>
 
 
+<script type="text/javascript">
+        function getGameID() {
+
+            var input = document.getElementById("gameidinput").value;
+            if (input.length != 8) {
+                alert("The game id that gets generated from panel.greedygame.com is 8 digits long ! Please correct your game id ");
+                 ggAlertDisplay('The game id that gets generated from panel.greedygame.com is 8 digits long ! Please correct your game id ');
+                return;
+            }
+           document.getElementById("gameidheading").innerHTML = "Your game id is  " + input ;
+           isGameIDAvailable = true;
+
+           	document.getElementById('gameidtext').innerHTML = input;
+           	document.getElementById('gameidtext2').innerHTML = "you can copy paste the above code directly into your manifest";
+
+        }
+    </script>
+
+
+
 
 <p>
-  
-    
-
-
-
-
-
 &lt;!-- GreedyGame SDK's requirements end --&gt;
 </p>
         </section>
