@@ -119,14 +119,11 @@ integration.</p>
 
 <p><strong>Float-Units :</strong> The clickable ad unit from GreedyGame. On click of this button a window opens which basically displays HTML pages. The size shape and position of the float units are dynamic which means it can always be changed from the server side.</p>
 
-<div>
-<img id="imgnobranding" alt= "Game with no GreedyGame Branding" src="images/guide/crciket_nobrand_720.png"  onload= "width=this.width/=2.1;" onclick="modalOnClick('imgnobranding')" onmouseover="cursor=pointer;">
-<img id="imgbranding" alt= "Game Branded with ads ( ads of GreedyGame itself ) " src="images/guide/mock-with ads-edit.png"  onload= "width=this.width/=2.1;" onclick="modalOnClick('imgbranding')">
+<div id="cf">
+  <img class="bottom" src="images/guide/mock-with ads-edit.png" />
+  <img class="top" src= "images/guide/crciket_nobrand_720.png"/>
 </div>
-
-
-
-
+<h4><strong> Scroll over the image to see native branding </strong></h4>
 <!-- The Modal -->
 <div id="myModal" class="modal">
 <!-- The Close Button -->
@@ -233,7 +230,7 @@ Remember and come back to this verification part if you face troubles after inte
 <ul>
 <li><strong><a href="#native-initsdk" >INITIALIZATION OF SDK</a> </strong></li>
 <li><strong><a href="#native-native-ad-units" >NATIVE AD UNIT INTEGRATION</a> </strong></li>
-<li><strong><a href="#native-floatadunits" >FLOAT AD UNIT INTEGRATION</a> </strong></li>
+<li><strong><a href="#native-float-ad-units" >FLOAT AD UNIT INTEGRATION</a> </strong></li>
 <li><strong><a href="#NativeOtherUtilities" >OTHER UTILITIES METHOD</a> </strong></li>
 <li><strong><a href="#IAgentListener" >Interface IAgentListener</a> </strong></li>
 </ul>
@@ -382,7 +379,7 @@ if(response == OnInitEvent.CAMPAIGN_NOT_AVAILABLE) {
 <p><code>void onError() {</code></p>
 <p>// This callback notifies that the download of assets have failed and no ads can be served in this session !</p>
 <p><code>}</code></p>
-<blockquote>Important : both onDownload() and onError() are called only after you get a callback on onInit(). If you getCAMPAIGN_NOT_AVAILABLE in onInit() function then no further callbacks will be supplied to onSuccess and onError().</blockquote>
+<blockquote>Important : both onDownload() and onError() are called only after you get a callback on onInit(). If you get CAMPAIGN_NOT_AVAILABLE in onInit() function then no further callbacks will be supplied to onSuccess and onError().</blockquote>
 
 
 <p><strong>Callback - when there are unavailable permissions</strong></p>
@@ -445,7 +442,7 @@ Add this to your cocos2d-x project.Put all branded assets under folder Resources
 
 Declare the following string in strings.xml file under the res/values folder.
 "your-game-id-without-quotes"
-<p><h4><strong><a id="CocosInitialization" class="anchor" href="#CocosInitialization" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>INITIALIZATION OF SDK </strong></h4></p>
+<p><h3><strong><a id="CocosInitialization" class="anchor" href="#CocosInitialization" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>INITIALIZATION OF SDK </strong></h3></p>
 <p>In your Game's Cocos Android Activity's onCreate() function add the following code. Make sure that this initialization is done only inside onCreate() and not in onResume() or any other activity lifecycle methods.</p>
 <p><strong>Snippet 1 : </strong></p>
 <code>&lt;protected void onCreate(Bundle savedInstanceState){
