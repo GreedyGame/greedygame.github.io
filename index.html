@@ -139,18 +139,6 @@ integration.</p>
   <div id="caption"></div>
 </div>
 
-
-//alert box
-<div id="myAlertBox" class="ggalert">
-<!-- The Close Button -->
-  <span class="alertclose" onclick="document.getElementById('myAlertBox').style.display='none'">&times;</span>
-<a id="alertcontent" > </a>
-
-</div>
-
-
-
-//modal JS
 <script>
 //javascript for modal
 // Get the modal
@@ -174,30 +162,6 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-
-
-//alertBox JS
-<script>
-//javascript for modal
-// Get the modal
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var ggAlert = document.getElementById('myAlertBox');
-var captionText = document.getElementById("alertcontent");
-function ggAlertDisplay(text) {
-
-    captionText.innerHTML = text;
-}
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("alertclose")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    ggAlert.style.display = "none";
-}
-</script>
-
-
 
 <script>
 function scrollTo(to, duration) {
@@ -291,9 +255,9 @@ Remember and come back to this verification part if you face troubles after inte
 
 <p><h3><strong>GAME PROFILE ID :</strong></h3> Put your gameprofile id generated in this step into the Android xml values as string as shown below.</p>
 
-<h4 id="gameidheading">If you have already generated the game id from panel please enter it here</h4>
+<h4 id="gameidheading"><font color="#191970">If you have already generated the game id from panel please enter it here</font></h4>
     <input type="text" id="gameidinput" autofocus value = "your game id" />
-    <input type="submit" value="OK" onclick="getGameID()" />
+    <input type="submit" value="Generate Code" onclick="getGameID()" />
 
 <p><code>&lt;resources&gt;</code>
             <code>&lt;string name="greedy_game_profile"&gt;<a id="gameidtext" >11111111</a>&lt;/string&gt;</code>
@@ -328,6 +292,7 @@ Example 2 : (If you want to download native units by path )
 <code>String[] units = {"sun.png","moon.png","float-1744","float-1743"};</code></p>
 <p><code>ggAgent.init(units, FetchType.DOWNLOAD_BY_PATH);</code>
 </p>
+
 NOTE 
 <ul>
 <li>Float units are always passed with ID's. </li>
@@ -379,9 +344,15 @@ Constructs a new instance of FloatAdLayout. Remember to add it to the current ac
 <strong>Function 1 :</strong> <code>public void fetchHeadAd(String unit_id) throws AgentInitNotCalledException</code>
 <p>Whenever you need to display a float-unit ( clickable unit ) use this function as shown in the snippet below. ( Replace “float-100”  with the appropriate float unit in your game )</p>
 
-<p><strong>SNIPPET 1:</strong> <code>floatAdLayout.fetchHeadAd(“float-100”);</code>
+<p><strong>SNIPPET 1:</strong> <code>floatAdLayout.fetchHeadAd(“unit_id”);</code>
 
 unit_id - Float unit id from panel.greedygame.com (e.g 'float-123')</p>
+
+<h4 id="floatCode"><font color="#191970"> Enter your float unit id </font> </h4>
+    <input type="text" id="floatInput" autofocus value = "enter float unit id" />
+    <input type="submit" value="Generate Code" onclick="getFloatCode()" />
+
+<p><code><a id="floatCodeHolder" ></a></code></p>
 
 <p><strong>Remove float unit :</strong> <p>Whenever you need to hide a float-unit or if you need to load a new float unit then call the below function to remove the previous float unit from screen ! Also make sure that the new float unit that needs to be displayed is fetched after removing the previous float.</p>
 <p>/*** Fetching Float Ad unit ***/</p>
@@ -556,6 +527,13 @@ NATIVE AD UNIT INTEGRATION : </strong></p>
 <p>Whenever you want to add a float unit to a scene just use the following function with the float unit id generated earlier.</p>
 <p><code>greedygame::GreedyGameSDK::fetchAdHead(""); ​</code></p>
 
+<h4 id="floatCocosCode"><font color="#191970"> Enter your float unit id </font> </h4>
+    <input type="text" id="floatCocosInput" autofocus value = "enter float unit id" />
+    <input type="submit" value="Generate Code" onclick="getFloatCodeCocos()" />
+
+<p><code><a id="floatCocosCodeHolder" ></a></code></p>
+
+
 <p><strong>Remove floating units</strong></p>
 <p>Whenever you want remove a float ad from the screen just call the following function.</p>
 <p><code>greedygame::GreedyGameSDK::removeAdHead(); ​</code></p>
@@ -729,11 +707,43 @@ To avoid this immediate activity creation and destroying overhead, add the follo
                  ggAlertDisplay('The game id that gets generated from panel.greedygame.com is 8 digits long ! Please correct your game id ');
                 return;
             }
-           document.getElementById("gameidheading").innerHTML = "Your game id is  " + input ;
+           document.getElementById("gameidheading").innerHTML = "GameProfileId : " + input ;
            isGameIDAvailable = true;
 
            	document.getElementById('gameidtext').innerHTML = input;
-           	document.getElementById('gameidtext2').innerHTML = "you can copy paste the above code directly into your manifest";
+           	document.getElementById('gameidtext2').innerHTML = "you can copy paste the above code directly into your strings.xml file";
+
+        }
+    </script>
+
+
+    <script type="text/javascript">
+        function getFloatCode() {
+
+            var input = document.getElementById("floatInput").value;
+            var pos = input.indexOf("float-");
+            if (pos == -1 || pos!=0) {
+                alert("The syntax for float unit that you entered is wrong. Float unit id should start with 'float-'");
+                return;
+            } 
+           	document.getElementById('floatCodeHolder').innerHTML = "floatAdLayout.fetchHeadAd(&quot"+input+"&quot)";
+           	
+
+        }
+    </script>
+
+
+    <script type="text/javascript">
+        function getFloatCodeCocos() {
+
+            var input = document.getElementById("floatCocosInput").value;
+            var pos = input.indexOf("float-");
+            if (pos == -1 || pos!=0) {
+                alert("The syntax for float unit that you entered is wrong. Float unit id should start with 'float-'");
+                return;
+            } 
+           	document.getElementById('floatCocosCodeHolder').innerHTML = "greedygame::GreedyGameSDK::fetchAdHead(&quot"+input+"&quot);";
+           	
 
         }
     </script>

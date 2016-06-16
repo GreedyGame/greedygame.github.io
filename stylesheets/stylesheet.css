@@ -296,6 +296,8 @@ html input[type="button"], /* 1 */
 input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button; /* 2 */
+  border : 3px solid #555;; 
+  background-color: white;
   cursor: pointer; /* 3 */
 }
 
@@ -325,6 +327,7 @@ input::-moz-focus-inner {
 
 input {
   line-height: normal;
+
 }
 
 /**
@@ -375,6 +378,18 @@ input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
+
+input[type="text"] {
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+input[type="text"]:focus {
+    border: none;
+    border-bottom: 2px solid black;
+    outline: none;
+}
+
 
 /**
  * Define consistent border, margin, and padding.
