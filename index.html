@@ -277,7 +277,7 @@ Remember and come back to this verification part if you face troubles after inte
 
 <p><h3><strong>GAME PROFILE ID :</strong></h3> Put your gameprofile id generated in this step into the Android xml values as string as shown below.</p>
 
-<h4 id="gameidheading"><font color="#191970">If you have already generated the game id from panel please enter it here</font></h4>
+<h4 id="gameidheading"><font color="#2d2d2d">If you have already generated the game id from panel please enter it here</font></h4>
     <input type="text" id="gameidinput" placeholder="your game id" autofocus />
     <button class="ctrl-standard typ-subhedsmall fx-bubbleDown" onclick="getGameID()" >Generate Code </button>
 
@@ -380,7 +380,7 @@ this.addContentView(floatAdlayout, params);
 <p>unit_id - Float unit id from panel.greedygame.com (e.g 'float-123')</p>
 
 
-<h4 id="floatCode"><font color="#191970"> <strong>Enter your float unit id</strong> </font> </h4>
+<h4 id="floatCode"><font color="#2d2d2d"> <strong>Enter your float unit id</strong> </font> </h4>
     <input type="text" id="floatInput" autofocus placeholder = "enter float unit id" />
     <button class="ctrl-standard typ-subhedsmall fx-bubbleDown" onclick="getFloatCode()" >Generate Code </button>
 <p><code><a id="floatCodeHolder" ></a></code></p>
@@ -576,7 +576,7 @@ NATIVE AD UNIT INTEGRATION : </strong></p>
 <p>Whenever you want to add a float unit to a scene just use the following function with the float unit id generated earlier.</p>
 <pre>greedygame::GreedyGameSDK::fetchAdHead("float-123"); ​</pre>
 
-<h4 id="floatCocosCode"><font color="#191970"> Enter your float unit id </font> </h4>
+<h4 id="floatCocosCode"><font color="#2d2d2d"> Enter your float unit id </font> </h4>
     <input type="text" id="floatCocosInput" autofocus placeholder = "enter float unit id" />
     <button class="ctrl-standard typ-subhedsmall fx-bubbleDown" onclick="getFloatCodeCocos()" >Generate Code </button>
 
@@ -615,7 +615,7 @@ GreedyGameConfigPrefab : As shown in the following screenshot create a GreedyGam
 
 <img id = "unityid" src="images/guide/4_link_unit_ids.png" align='middle' onload="width = this.width/=2;" onclick="modalOnClick('unityid')" alt="Setting up GreedyGameConfigPrefab">
 
-<p><h4><a id="unity-native-unit" class="anchor" href="#unity-native-unit" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NATIVE UNIT INTEGRATION</h4></p>
+<p><h3><a id="unity-native-unit" class="anchor" href="#unity-native-unit" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NATIVE UNIT INTEGRATION</h3></p>
 <ul>
 <li>Select the GameObject from your scene which uses the texture that was uploaded to the panel.</li>
 <li>From Inspector panel add component AdUnit or SharedAdUnit.</li>
@@ -630,7 +630,7 @@ GreedyGameConfigPrefab : As shown in the following screenshot create a GreedyGam
 
 <p>In the namespace field add the appropriate native ad unit id that you have added into the GreedyGameConfigPrefab. Once you do that the yellow color will change to green which means its good to go !</p>
 
-<p><h4><a id="unity-float-unit" class="anchor" href="#unity-float-unit" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>FLOAT UNIT INTEGRATION</h4></p>
+<p><h3><a id="unity-float-unit" class="anchor" href="#unity-float-unit" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>FLOAT UNIT INTEGRATION</h3></p>
 
 <p>Select the scene where you need the FloatAd-Unit to be displayed. Wherever you want to fetch or hide the FloatAd-Unit, just use the following function from GreedyGame.Runtime.Common
 To show FloatAd-Unit</p>

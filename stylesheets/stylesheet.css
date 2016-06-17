@@ -458,14 +458,14 @@ body {
 
 p {
   margin-top: 0;
-  color:#000;
+  color:#333333;
 }
 
 a {
-  color: #2879d0;
+  color: #737373;
 }
 a:hover {
-  color: #2268b2;
+  color: #262626;
 }
 
 header {
