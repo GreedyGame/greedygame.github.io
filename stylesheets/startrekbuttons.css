@@ -36,7 +36,7 @@ body::before {
 .ctrl-standard.fx-bubbleDown::after {
   bottom: auto;
   border-radius: 0 0 $right-val2 $left-val2/0 0 $right-val1 $left-val1;
-  background: #566D7E;
+  background: #2d2d2d;
 }
 .ctrl-standard.fx-bubbleDown.is-reversed::after {
   height: 300%;
@@ -88,10 +88,10 @@ body::before {
 }
 [class*="ctrl-"][class*="fx-"]:hover,
 [class*="ctrl-"][class*="fx-"].active {
-  color: #231f20;
+  color: #fff;
 }
 [class*="ctrl-"][class*="fx-"].is-reversed {
-  color: #231f20;
+  color: #fff;
 }
 
   [class*="fx-"],

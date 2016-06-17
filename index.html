@@ -13,6 +13,8 @@
      <link rel="stylesheet" type="text/css" href="stylesheets/startrekbuttons.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/modalgg.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="javascripts/smoothscroll.js"></script>
 
 <script>
 
@@ -63,13 +65,13 @@ function pictureMin(objectid) {
   
 
   
-  <a href="#how-to-start-monetizing-with-greedygame-">Initial Setup</a>
-  <a href="#verifying-integration">Verify Integration</a>
-  <a href="#native-integration-guide">Native Integration</a>
-  <a href="#cocos-integration-guide">Cocos Integration</a>
-  <a href="#unity-integration-guide">Unity Integration</a>
-  <a href="#importanttweaks">Additional Tweaks</a>
-  <a href="#verifying-integration" onmouseover="changeColor()" onmouseout="changeColorBack()"  id="issuesInIntegration">Issues in Integration</a>
+  <a href="#how-to-start-monetizing-with-greedygame-" class="smoothScroll">Initial Setup</a>
+  <a href="#verifying-integration" class="smoothScroll">Verify Integration</a>
+  <a href="#native-integration-guide" class="smoothScroll" >Native Integration</a>
+  <a href="#cocos-integration-guide" class="smoothScroll">Cocos Integration</a>
+  <a href="#unity-integration-guide" class="smoothScroll">Unity Integration</a>
+  <a href="#importanttweaks" class="smoothScroll">Additional Tweaks</a>
+  <a href="#verifying-integration" onmouseover="changeColor()" onmouseout="changeColorBack()"  id="issuesInIntegration" class="smoothScroll">Issues in Integration</a>
 
 </div>
 
@@ -257,11 +259,11 @@ Remember and come back to this verification part if you face troubles after inte
 <font size="+3"><center><a id="native-integration-guide" class="anchor" href="#native-integration-guide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NATIVE INTEGRATION GUIDE</center></font></h3>
 
 <ul>
-<li><strong><a href="#native-initsdk" >INITIALIZATION OF SDK</a> </strong></li>
-<li><strong><a href="#native-native-ad-units" >NATIVE AD UNIT INTEGRATION</a> </strong></li>
-<li><strong><a href="#native-float-ad-units" >FLOAT AD UNIT INTEGRATION</a> </strong></li>
-<li><strong><a href="#NativeOtherUtilities" >OTHER UTILITIES METHOD</a> </strong></li>
-<li><strong><a href="#IAgentListener" >Interface IAgentListener</a> </strong></li>
+<li><strong><a href="#native-initsdk" class="smoothScroll">INITIALIZATION OF SDK</a> </strong></li>
+<li><strong><a href="#native-native-ad-units" class="smoothScroll">NATIVE AD UNIT INTEGRATION</a> </strong></li>
+<li><strong><a href="#native-float-ad-units" class="smoothScroll">FLOAT AD UNIT INTEGRATION</a> </strong></li>
+<li><strong><a href="#NativeOtherUtilities" class="smoothScroll">OTHER UTILITIES METHOD</a> </strong></li>
+<li><strong><a href="#IAgentListener" class="smoothScroll">Interface IAgentListener</a> </strong></li>
 </ul>
 
 <h3><font size="+2">BASIC SETUP</font></h3>
@@ -488,12 +490,12 @@ class GGListner implements IAgentListener{
 <font size="+3"><center><a id="cocos-integration-guide" class="anchor" href="#cocos-integration-guide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>COCOS INTEGRATION GUIDE</center></font></h3>
 
 <ul>
-<li><strong><a href="#CocosBasicSetup">BASIC SETUP</a> </strong></li>
-<li><strong><a href="#CocosInitialization">INITIALIZATION OF SDK</a> </strong></li>
-<li><strong><a href="#CocosNativeAdUnits">NATIVE AD UNIT INTEGRATION</a> </strong></li>
-<li><strong><a href="#CocosFloatUnits">FLOAT AD UNIT INTEGRATION</a> </strong></li>
-<li><strong><a href="#NativeOtherUtilities">MARSHMALLOW COMPLIANCE</a> </strong></li>
-<li><strong><a href="#IAgentListener">IMPORTANT TWEAKS</a> </strong></li>
+<li><strong><a href="#CocosBasicSetup" class="smoothScroll">BASIC SETUP</a> </strong></li>
+<li><strong><a href="#CocosInitialization" class="smoothScroll">INITIALIZATION OF SDK</a> </strong></li>
+<li><strong><a href="#CocosNativeAdUnits" class="smoothScroll">NATIVE AD UNIT INTEGRATION</a> </strong></li>
+<li><strong><a href="#CocosFloatUnits" class="smoothScroll">FLOAT AD UNIT INTEGRATION</a> </strong></li>
+<li><strong><a href="#NativeOtherUtilities" class="smoothScroll">MARSHMALLOW COMPLIANCE</a> </strong></li>
+<li><strong><a href="#IAgentListener" class="smoothScroll">IMPORTANT TWEAKS</a> </strong></li>
 </ul>
 
 
@@ -572,30 +574,30 @@ NATIVE AD UNIT INTEGRATION : </strong></p>
 <p><a id="CocosFloatUnits" class="anchor" href="#CocosFloatUnits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>FLOAT AD UNIT INTEGRATION
 <p><strong>Fetch floating units</strong></p>
 <p>Whenever you want to add a float unit to a scene just use the following function with the float unit id generated earlier.</p>
-<p><code>greedygame::GreedyGameSDK::fetchAdHead(""); ​</code></p>
+<pre>greedygame::GreedyGameSDK::fetchAdHead("float-123"); ​</pre>
 
 <h4 id="floatCocosCode"><font color="#191970"> Enter your float unit id </font> </h4>
     <input type="text" id="floatCocosInput" autofocus placeholder = "enter float unit id" />
     <button class="ctrl-standard typ-subhedsmall fx-bubbleDown" onclick="getFloatCodeCocos()" >Generate Code </button>
 
-<p><code><a id="floatCocosCodeHolder" ></a></code></p>
+<p><a id="floatCocosCodeHolder" ></a></p>
 
 
 <p><strong>Remove floating units</strong></p>
 <p>Whenever you want remove a float ad from the screen just call the following function.</p>
-<p><code>greedygame::GreedyGameSDK::removeAdHead(); ​</code></p>
+<pre>greedygame::GreedyGameSDK::removeAdHead(); ​</pre>
 
 <h3>
 <font size="+3"><center><a id="unity-integration-guide" class="anchor" href="#unity-integration-guide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>UNITY INTEGRATION GUIDE</center></font></h3>
 
 <ul>
-<li>BASIC SETUP</li>
-<li>NATIVE AD UNIT INTEGRATION</li>
-<li>FLOAT AD UNIT INTEGRATION</li>
-<li>IMPORTANT TWEAKS</li>
+<li><strong><a href="#unity-basicsetup" class="smoothScroll" >BASIC SETUP</a></strong></li>
+<li><strong><a href="#unity-native-unit" class="smoothScroll">NATIVE AD UNIT INTEGRATION</a></strong></li>
+<li><strong><a href="#unity-float-unit" class="smoothScroll">FLOAT AD UNIT INTEGRATION</a></strong></li>
+<li><strong><a href="#importanttweaks" class="smoothScroll">IMPORTANT TWEAKS</a></strong></li>
 </ul>
 
-<p><h4><strong><a id="unity-basic-setup" class="anchor" href="#unity-basic setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>BASIC SETUP</strong></h4></p>
+<p><h3><strong><a id="unity-basic-setup" class="anchor" href="#unity-basicsetup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>BASIC SETUP</strong></h3></p>
 
 <p>
 Download unity package from the following github link and import unity package into unity. 
@@ -628,7 +630,7 @@ GreedyGameConfigPrefab : As shown in the following screenshot create a GreedyGam
 
 <p>In the namespace field add the appropriate native ad unit id that you have added into the GreedyGameConfigPrefab. Once you do that the yellow color will change to green which means its good to go !</p>
 
-<p><h4><strong>FLOAT UNIT INTEGRATION</strong></h4></p>
+<p><h4><a id="unity-float-unit" class="anchor" href="#unity-float-unit" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>FLOAT UNIT INTEGRATION</h4></p>
 
 <p>Select the scene where you need the FloatAd-Unit to be displayed. Wherever you want to fetch or hide the FloatAd-Unit, just use the following function from GreedyGame.Runtime.Common
 To show FloatAd-Unit</p>
