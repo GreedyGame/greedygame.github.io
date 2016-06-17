@@ -110,8 +110,9 @@ integration.</p>
 <p>NB: if the game is not yet in playstore then you can use a dummy URL instead of playstore URL.</p>
 </blockquote>
 
-<img src="images/guide/created-edited2.png" id="panel-created" align='middle' onclick="modalOnClick('panel-created')" >
-
+<div style="text-align:center;">
+<img src="images/guide/created-edited2.png" id="panel-created" align='middle' onload="this.width/=1.5" onclick="modalOnClick('panel-created')" alt="Publisher Panel" >
+</div>
 
 <p><strong>Identifying good ad-spots and uploading assets :</strong> Upload the textures used in your game after you create the game id. You can refer figure 2 point no. 4 for doing this. For each screen that needs a FloatAd unit create a seperate float unit by clicking on create float unit button as shown at point 3.</p>
 
@@ -130,15 +131,19 @@ integration.</p>
   <img class="bottom" src="images/guide/mock-with ads-edit.png" />
   <img class="top" src= "images/guide/crciket_nobrand_720.png"/>
 </div>
+<div style="text-align:center;">
 <h4><strong> Scroll over the image to see native branding </strong></h4>
+</div>
 <!-- The Modal -->
 <div id="myModal" class="modal">
 <!-- The Close Button -->
   <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
 <!-- Modal Content (The Image) -->
+
   <img class="modal-content" id="imgmodal">
-<!-- Modal Caption (Image Text) -->
   <div id="caption"></div>
+<!-- Modal Caption (Image Text) -->
+  
 </div>
 
 <script>
@@ -374,8 +379,8 @@ this.addContentView(floatAdlayout, params);
 
 
 <h4 id="floatCode"><font color="#191970"> <strong>Enter your float unit id</strong> </font> </h4>
-    <input type="text" id="floatInput" autofocus value = "enter float unit id" />
-    <input type="submit" value="Generate Code" onclick="getFloatCode()" />
+    <input type="text" id="floatInput" autofocus placeholder = "enter float unit id" />
+    <button class="ctrl-standard typ-subhedsmall fx-bubbleDown" onclick="getFloatCode()" >Generate Code </button>
 <p><code><a id="floatCodeHolder" ></a></code></p>
 </p>
 <p><strong>Remove float unit :</strong> <p>Whenever you need to hide a float-unit or if you need to load a new float unit then call the below function to remove the previous float unit from screen ! Also make sure that the new float unit that needs to be displayed is fetched after removing the previous float.</p>
@@ -570,8 +575,8 @@ NATIVE AD UNIT INTEGRATION : </strong></p>
 <p><code>greedygame::GreedyGameSDK::fetchAdHead(""); ​</code></p>
 
 <h4 id="floatCocosCode"><font color="#191970"> Enter your float unit id </font> </h4>
-    <input type="text" id="floatCocosInput" autofocus value = "enter float unit id" />
-    <input type="submit" value="Generate Code" onclick="getFloatCodeCocos()" />
+    <input type="text" id="floatCocosInput" autofocus placeholder = "enter float unit id" />
+    <button class="ctrl-standard typ-subhedsmall fx-bubbleDown" onclick="getFloatCodeCocos()" >Generate Code </button>
 
 <p><code><a id="floatCocosCodeHolder" ></a></code></p>
 
@@ -606,6 +611,8 @@ GreedyGameConfigPrefab : As shown in the following screenshot create a GreedyGam
 </ul>
 </p>
 
+<img id = "unityid" src="images/guide/4_link_unit_ids.png" align='middle' onload="width = this.width/=2;" onclick="modalOnClick('unityid')" alt="Setting up GreedyGameConfigPrefab">
+
 <p><h4><a id="unity-native-unit" class="anchor" href="#unity-native-unit" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NATIVE UNIT INTEGRATION</h4></p>
 <ul>
 <li>Select the GameObject from your scene which uses the texture that was uploaded to the panel.</li>
@@ -616,7 +623,8 @@ GreedyGameConfigPrefab : As shown in the following screenshot create a GreedyGam
 
 <p>You can use AdUnit and Shared AdUnit to change material and sharedMaterials.</p>
 
-<img id = "unityid" src="images/guide/4_link_unit_ids.png" align='middle' onload="width = this.width/=2;" onclick="modalOnClick('unityid')">
+<img id = "unityadunit" src="images/guide/unity/2_attached_monobehaviour.png" align='middle' onload="width = this.width/=2;" onclick="modalOnClick('unityadunit')" alt="Attach SharedAdUnit to texture">
+<img id = "unityadunit2" src="images/guide/unity/5_link_unit_ids.png" align='middle' onload="width = this.width/=2;" onclick="modalOnClick('unityadunit2')" alt="Adding the correct unit-id">
 
 <p>In the namespace field add the appropriate native ad unit id that you have added into the GreedyGameConfigPrefab. Once you do that the yellow color will change to green which means its good to go !</p>
 
@@ -625,10 +633,10 @@ GreedyGameConfigPrefab : As shown in the following screenshot create a GreedyGam
 <p>Select the scene where you need the FloatAd-Unit to be displayed. Wherever you want to fetch or hide the FloatAd-Unit, just use the following function from GreedyGame.Runtime.Common
 To show FloatAd-Unit</p>
 
-<code> GreedyAdManager.Instance.FetchAdHead (FloatAd_ID); </code>
+<pre> GreedyAdManager.Instance.FetchAdHead (FloatAd_ID); </pre>
 
 <p>To remove FloatAd-Unit </p>
-<p><code>GreedyAdManager.Instance.RemoveAllAdHead ();</code></p>
+<pre>GreedyAdManager.Instance.RemoveAllAdHead ();</pre>
 
 
 
@@ -719,7 +727,7 @@ void OnGreedyEvent(RuntimeEvent greedy_events){
 <blockquote> The above strings itself are returned in the argument if they are not available.</blockquote>>
 
 <p><h3><a id="importanttweaks" class="anchor" href="#importanttweaks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>IMPORTANT TWEAKS : </h3></p>
-<p><strong>COCOS : Exiting the Game<strong><p>
+<p><strong>COCOS : Exiting the Game</strong><p>
 
 <p>If you are using any of the following function to exit from the game </p>
 
@@ -730,7 +738,7 @@ void OnGreedyEvent(RuntimeEvent greedy_events){
 </ul>
 <p> you should make sure that you are calling the below function just before exiting greedygame::GreedyGameSDK::unInstall();</p>
 
-<p><strong>NATIVE : Exiting the Game<strong><p>
+<p><strong>NATIVE : Exiting the Game</strong><p>
 
 <p>If you are using the following function to exit from the game </p>
 
@@ -738,20 +746,22 @@ void OnGreedyEvent(RuntimeEvent greedy_events){
 <li><code>System.exit(0);</code></li>
 
 </ul>
-<p> you should make sure that you are calling the below function just before exiting greedygame::GreedyGameSDK::unInstall();</p>
+<p> you should make sure that you are calling the below function just before exiting </p> 
+<pre> greedyGameAgent.onActivityPaused(); </pre>
 
 <p><h3><strong><a id="proguardsettings" class="anchor" href="#proguardsettings" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PROGUARD SETTINGS</strong></h3></p>
-<p>If you are using Proguard add the following to your Proguard settings !</p>
-<p>-keep class com.greedygame.android.** { *;}</p>
+<p> If you are using Proguard add the following to your Proguard settings ! </p>
+<pre>
+-keep class com.greedygame.android.** { *;}
 
-<p>-keepattributes JavascriptInterface</p>
+-keepattributes JavascriptInterface
 
-<p>-keepclassmembers class * {</p>
+-keepclassmembers class * {
 
-    <p>@android.webkit.JavascriptInterface ;</p>
+    @android.webkit.JavascriptInterface ;
 
-<p>} </p>
-
+} 
+</pre>
 
 <p><strong><h3><a id="othermanifestchanges" class="anchor" href="#othermanifestchanges" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Recommended Manifest changes</h3></strong></p>
 <p>The GreedyGame SDK is connected with the activity lifecycle of your game. Generally Games works in either portrait or landscape mode for consistent user experience. Hence it is advisable not to recreate the activity on config changes which may happen due to power button press etc.
