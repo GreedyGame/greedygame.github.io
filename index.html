@@ -93,9 +93,10 @@ function pictureMin(objectid) {
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-          <h2>
-<a id="greedygame---integration-guide" class="anchor" href="#greedygame---integration-guide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><font size="+3"><center>GREEDYGAME - INTEGRATION GUIDE</center></font></h2>
-
+            <div  class="box"    >
+            <h2>  
+           <a id="greedygame---integration-guide" class="anchor" href="#greedygame---integration-guide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><font size="+3"><center>GREEDYGAME - INTEGRATION GUIDE</center></font></h2>
+        
 
 <a id="ads-that-people-love" class="anchor" href="#ads-that-people-love" aria-hidden="true" color="f00"><span aria-hidden="true" class="octicon octicon-link"></span></a><center>Ads that people love</center>
 
@@ -223,7 +224,7 @@ function test(elID)
     </div>
     
   
-
+</div>
 
 
 
@@ -255,6 +256,28 @@ Remember and come back to this verification part if you face troubles after inte
 <li>RECOMMENDED MANIFEST CHANGE</li>
 </ul>
 
+
+<button class="accordion">Section 1</button>
+<div class="panel">
+  <p>Lorem ipsum...</p>
+</div>
+
+<button class="accordion">Section 2</button>
+<div class="panel">
+  <p>Lorem ipsum...</p>
+</div>
+
+<button class="accordion">Section 3</button>
+<div class="panel">
+  <p>Lorem ipsum...</p>
+</div>
+
+
+
+
+
+
+<div  class="box"    >
 <h3>
 <font size="+3"><center><a id="native-integration-guide" class="anchor" href="#native-integration-guide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NATIVE INTEGRATION GUIDE</center></font></h3>
 
@@ -320,7 +343,7 @@ NOTE
 <ul>
 <li>Float units are always passed with ID's. </li>
 <li>For each native unit that you upload to panel.greedygame.com a particular unit-id is generated. Use those ID's while DOWNLOADING_BY_ID. </li>
-<li>Call ggAgent.init() function only inside onCreate of your starting activity.</p></li>
+<li><p>Call ggAgent.init() function only inside onCreate of your starting activity.</p></li>
 </ul>
 <p><h3><strong><a id="native-native-ad-units" class="anchor" href="#native-nativeadunits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NATIVE AD UNIT INTEGRATION : </strong></h3></p>
 
@@ -384,8 +407,9 @@ this.addContentView(floatAdlayout, params);
     <input type="text" id="floatInput" autofocus placeholder = "enter float unit id" />
     <button class="ctrl-standard typ-subhedsmall fx-bubbleDown" onclick="getFloatCode()" >Generate Code </button>
 <p><code><a id="floatCodeHolder" ></a></code></p>
-</p>
-<p><strong>Remove float unit :</strong> <p>Whenever you need to hide a float-unit or if you need to load a new float unit then call the below function to remove the previous float unit from screen ! Also make sure that the new float unit that needs to be displayed is fetched after removing the previous float.</p>
+
+
+<p><strong>Remove float unit :</strong> </p>Whenever you need to hide a float-unit or if you need to load a new float unit then call the below function to remove the previous float unit from screen ! Also make sure that the new float unit that needs to be displayed is fetched after removing the previous float.</p>
     <p><pre>floatAdlayout.remove();</pre></p>
 
 
@@ -458,6 +482,7 @@ no ads can be served in this session ! */</p>
 <li>Manifest.permission.WRITE_EXTERNAL_STORAGE</li>
 <li>Manifest.permission.GET_ACCOUNTS</li>
 <li>Manifest.permission.READ_PHONE_STATE</li>
+</ul>
 <blockquote>Note : The above strings itself are returned in the argument if they are not available. </blockquote>
 
 
@@ -486,6 +511,13 @@ class GGListner implements IAgentListener{
     }
 }
 </pre>
+
+</div>
+
+
+
+
+<div class="box">
 <h3>
 <font size="+3"><center><a id="cocos-integration-guide" class="anchor" href="#cocos-integration-guide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>COCOS INTEGRATION GUIDE</center></font></h3>
 
@@ -586,7 +618,11 @@ NATIVE AD UNIT INTEGRATION : </strong></p>
 <p><strong>Remove floating units</strong></p>
 <p>Whenever you want remove a float ad from the screen just call the following function.</p>
 <pre>greedygame::GreedyGameSDK::removeAdHead(); ​</pre>
+</div>
 
+
+
+<div class ="box">
 <h3>
 <font size="+3"><center><a id="unity-integration-guide" class="anchor" href="#unity-integration-guide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>UNITY INTEGRATION GUIDE</center></font></h3>
 
@@ -727,6 +763,8 @@ void OnGreedyEvent(RuntimeEvent greedy_events){
 <p><code>Manifest.permission.READ_PHONE_STATE ​ </code></p>
 </ul>
 <blockquote> The above strings itself are returned in the argument if they are not available.</blockquote>>
+</div>
+
 
 <p><h3><a id="importanttweaks" class="anchor" href="#importanttweaks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>IMPORTANT TWEAKS : </h3></p>
 <p><strong>COCOS : Exiting the Game</strong><p>
@@ -826,6 +864,19 @@ To avoid this immediate activity creation and destroying overhead, add the follo
         }
     </script>
 
+
+<script type="text/javascript">
+/* Toggle between adding and removing the "active" and "show" classes when the user clicks on one of the "Section" buttons. The "active" class is used to add a background color to the current button when its belonging panel is open. The "show" class is used to open the specific accordion panel */
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+    }
+}
+</script>
 
 
 

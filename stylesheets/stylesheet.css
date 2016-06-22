@@ -511,7 +511,7 @@ header h2 {
 
 #main-content {
   float: left;
-  width: 690px;
+  width: 90%;
 }
 
 #main-content img {
@@ -894,7 +894,6 @@ footer a:hover {
     content: none;
   }
 }
-
 
 
 
