@@ -230,50 +230,10 @@ function test(elID)
 
 
 
-<h3><font size="+2" color="#25383C">
-<a id="are-you-facing-issues-after-integration--" class="anchor" href="#are-you-facing-issues-after-integration--" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><em>ARE YOU FACING ISSUES AFTER INTEGRATION ?</em>
-</font></h3>
-
-<p>If you have already integrated the SDK after going through the integration guide and still if you face trouble or if you are stuck with something then verify the integration using the following forms. </p>
-
-<div style="text-align:center;">
-<h3><font color="#25383c"
-<a id="verifying-integration" class="anchor" href="#verifying-integration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>VERIFYING INTEGRATION</font></h3>
-</div>
-
-
-
-
-<div style="text-align:center;">
-<a href="http://goo.gl/forms/4CzvlVPMf5IkXd533" ><button class="ctrl-standard typ-subhed fx-bubbleDown">VERIFY NATIVE</button></a>
-    <a href="http://goo.gl/forms/gHuuDlgBczI64KMN2" ><button class="ctrl-standard typ-subhed fx-bubbleDown">VERIFY COCOS</button></a>
-    <a href="http://goo.gl/forms/jUnv2yxc2NbAV5Pa2" ><button class="ctrl-standard typ-subhed fx-bubbleDown">VERIFY UNITY</button></a>
-</div>
-
 <ul>
-Remember and come back to this verification part if you face troubles after integration
 <li>PROGUARD SETTINGS</li>
 <li>RECOMMENDED MANIFEST CHANGE</li>
 </ul>
-
-
-<button class="accordion">Section 1</button>
-<div class="panel">
-  <p>Lorem ipsum...</p>
-</div>
-
-<button class="accordion">Section 2</button>
-<div class="panel">
-  <p>Lorem ipsum...</p>
-</div>
-
-<button class="accordion">Section 3</button>
-<div class="panel">
-  <p>Lorem ipsum...</p>
-</div>
-
-
-
 
 
 
@@ -281,14 +241,15 @@ Remember and come back to this verification part if you face troubles after inte
 <h3>
 <font size="+3"><center><a id="native-integration-guide" class="anchor" href="#native-integration-guide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NATIVE INTEGRATION GUIDE</center></font></h3>
 
-<ul>
+<!-- <ul>
 <li><strong><a href="#native-initsdk" class="smoothScroll">INITIALIZATION OF SDK</a> </strong></li>
 <li><strong><a href="#native-native-ad-units" class="smoothScroll">NATIVE AD UNIT INTEGRATION</a> </strong></li>
 <li><strong><a href="#native-float-ad-units" class="smoothScroll">FLOAT AD UNIT INTEGRATION</a> </strong></li>
 <li><strong><a href="#NativeOtherUtilities" class="smoothScroll">OTHER UTILITIES METHOD</a> </strong></li>
 <li><strong><a href="#IAgentListener" class="smoothScroll">Interface IAgentListener</a> </strong></li>
-</ul>
-
+</ul>  -->
+<button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">BASIC SETUP</button>
+<div class="panel">
 <h3><font size="+2">BASIC SETUP</font></h3>
 
 <p><strong><h3>ECLIPSE :</h3></strong> If you are developing the native android project using eclipse then download the SDK from the following link and import the greedy-android-agent project and add it as a library to your project. </p>
@@ -345,6 +306,12 @@ NOTE
 <li>For each native unit that you upload to panel.greedygame.com a particular unit-id is generated. Use those ID's while DOWNLOADING_BY_ID. </li>
 <li><p>Call ggAgent.init() function only inside onCreate of your starting activity.</p></li>
 </ul>
+</div>
+
+
+
+<button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">NATIVE AD UNIT INTEGRATION</button>
+<div class="panel">
 <p><h3><strong><a id="native-native-ad-units" class="anchor" href="#native-nativeadunits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NATIVE AD UNIT INTEGRATION : </strong></h3></p>
 
 <p>During init call we did during initialization we are actually marking all assets that needs to be branded. So in case there is a campaign available, the relevent native units will be downloaded and kept at a certain folder inside the memory of the device. So all you need to do is 
@@ -375,9 +342,15 @@ Bitmap bmp2 = getBitmapByResName(GreedyGameAgent.getInstance(), "unit-1941");
 home.setImageBitmap(bmp2);
 </pre>
 <blockquote>Note : getActivePath will return null if there is no active theme</blockquote>
+</div>
 
 
-<p><h3><strong><a id="native-float-ad-units" class="anchor" href="#native-floatadunits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>FLOAT-AD-UNIT INTEGRATION :</p></h3></strong>
+
+
+
+<button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">FLOAT AD UNIT INTEGRATION</button>
+<div class="panel">
+<p><h3><strong><a id="native-float-ad-units" class="anchor" href="#native-floatadunits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>FLOAT-AD-UNIT INTEGRATION :</strong></h3></p>
 
 <p><strong>Initializing FloatAdLayout(Context context)</strong> </p>
 
@@ -411,8 +384,13 @@ this.addContentView(floatAdlayout, params);
 
 <p><strong>Remove float unit :</strong> </p>Whenever you need to hide a float-unit or if you need to load a new float unit then call the below function to remove the previous float unit from screen ! Also make sure that the new float unit that needs to be displayed is fetched after removing the previous float.</p>
     <p><pre>floatAdlayout.remove();</pre></p>
+</div>
 
 
+
+
+<button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">UTILITIES METHOD</button>
+<div class="panel">
 <p><h3><strong><a id="NativeOtherUtilities" class="anchor" href="#NativeOtherUtilities" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>OTHER UTILITIES METHOD : </strong></h3></p>
 
 <p><strong>Set sdk into debug mode</strong></p>
@@ -420,7 +398,12 @@ this.addContentView(floatAdlayout, params);
 
 <p><strong>Enable debug logs</p></strong>
 <p><code>public void setDebugLog(boolean b)</p></code>
+</div>
 
+
+
+<button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">Interface : IAgentListener</button>
+<div class="panel">
 <h3>
 <font size="+2"><a id="IAgentListener" class="anchor" href="#IAgentListener" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Interface IAgentListener</font></h3>
 <p>Class Overview It is used as a callback listener and is passed as an argument for GreedyGameAgent.install() method ( install method )</p>
@@ -513,7 +496,7 @@ class GGListner implements IAgentListener{
 </pre>
 
 </div>
-
+</div>
 
 
 
@@ -531,7 +514,8 @@ class GGListner implements IAgentListener{
 </ul>
 
 
-
+<button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">BASIC SETUP</button>
+<div class="panel">
 <p><h3><strong><a id="CocosBasicSetup" class="anchor" href="#CocosBasicSetup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>BASIC SETUP : </strong></h3></p>
 Download Android library project from Current_sdk/proj.android.
 You will find a folder named Classes. In this folder you will find GreedyGameSDK.h . iOS and Android will share this header file. 
@@ -540,6 +524,12 @@ Add this to your cocos2d-x project.Put all branded assets under folder Resources
 
 Declare the following string in strings.xml file under the res/values folder.
 "your-game-id-without-quotes"
+</div>
+
+
+
+<button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">INITIALIZATION OF SDK</button>
+<div class="panel">
 <p><h3><strong><a id="CocosInitialization" class="anchor" href="#CocosInitialization" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>INITIALIZATION OF SDK </strong></h3></p>
 <p>In your Game's Cocos Android Activity's onCreate() function add the following code. Make sure that this initialization is done only inside onCreate() and not in onResume() or any other activity lifecycle methods.</p>
 <p><strong>Snippet 1 : </strong></p>
@@ -599,10 +589,22 @@ void onProgress(float f) {
     pLabel-&gt;setString(s.c_str());
 }
 </pre>
+</div>
+
+
+
+
+<button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">NATIVE AD UNIT INTEGRATION</button>
+<div class="panel">
 <p><strong><a id="CocosNativeAdUnits" class="anchor" href="#CocosNativeAdUnits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
 NATIVE AD UNIT INTEGRATION : </strong></p>
 <p>Native branding in cocos are handled by the SDK itself. No additional codes need to be added. The only thing you need to make sure is that all units that needs to be branded are inside the greedygame folder inside assets folder and that you are adding those resource names as shown in this snippet here.</p>
+</div>
 
+
+
+<button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">FLOAT AD UNIT INTEGRATION</button>
+<div class="panel">
 <p><a id="CocosFloatUnits" class="anchor" href="#CocosFloatUnits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>FLOAT AD UNIT INTEGRATION
 <p><strong>Fetch floating units</strong></p>
 <p>Whenever you want to add a float unit to a scene just use the following function with the float unit id generated earlier.</p>
@@ -619,20 +621,24 @@ NATIVE AD UNIT INTEGRATION : </strong></p>
 <p>Whenever you want remove a float ad from the screen just call the following function.</p>
 <pre>greedygame::GreedyGameSDK::removeAdHead(); ​</pre>
 </div>
-
+</div>
 
 
 <div class ="box">
 <h3>
 <font size="+3"><center><a id="unity-integration-guide" class="anchor" href="#unity-integration-guide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>UNITY INTEGRATION GUIDE</center></font></h3>
 
+<!--
 <ul>
 <li><strong><a href="#unity-basicsetup" class="smoothScroll" >BASIC SETUP</a></strong></li>
 <li><strong><a href="#unity-native-unit" class="smoothScroll">NATIVE AD UNIT INTEGRATION</a></strong></li>
 <li><strong><a href="#unity-float-unit" class="smoothScroll">FLOAT AD UNIT INTEGRATION</a></strong></li>
 <li><strong><a href="#importanttweaks" class="smoothScroll">IMPORTANT TWEAKS</a></strong></li>
 </ul>
+-->
 
+<button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">BASIC SETUP</button>
+<div class="panel">
 <p><h3><strong><a id="unity-basic-setup" class="anchor" href="#unity-basicsetup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>BASIC SETUP</strong></h3></p>
 
 <p>
@@ -640,7 +646,7 @@ Download unity package from the following github link and import unity package i
 GreedyGameConfigPrefab : As shown in the following screenshot create a GreedyGameConfigPrefab. 
 </p>
 
-<p><strong>Fill in the game id in the field.</strong></p>
+<p><strong>Fill in the game id in the field. Select Editor > GreedyGame > Create ANDROID XML's</strong></p>
 <ul>
 <li>In the ad-unit array add all the native and float unit ids.</li>
 <li>Make sure that the isDebug box is unchecked before making game live. If isDebug is turned on it will run a test campaign.</li>
@@ -650,7 +656,11 @@ GreedyGameConfigPrefab : As shown in the following screenshot create a GreedyGam
 </p>
 
 <img id = "unityid" src="images/guide/4_link_unit_ids.png" align='middle' onload="width = this.width/=2;" onclick="modalOnClick('unityid')" alt="Setting up GreedyGameConfigPrefab">
+</div>
 
+
+<button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">NATIVE AD UNIT INTEGRATION</button>
+<div class="panel">
 <p><h3><a id="unity-native-unit" class="anchor" href="#unity-native-unit" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NATIVE UNIT INTEGRATION</h3></p>
 <ul>
 <li>Select the GameObject from your scene which uses the texture that was uploaded to the panel.</li>
@@ -665,7 +675,11 @@ GreedyGameConfigPrefab : As shown in the following screenshot create a GreedyGam
 <img id = "unityadunit2" src="images/guide/unity/5_link_unit_ids.png" align='middle' onload="width = this.width/=2;" onclick="modalOnClick('unityadunit2')" alt="Adding the correct unit-id">
 
 <p>In the namespace field add the appropriate native ad unit id that you have added into the GreedyGameConfigPrefab. Once you do that the yellow color will change to green which means its good to go !</p>
+</div>
 
+
+<button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">FLOAT UNIT INTEGRATION</button>
+<div class="panel">
 <p><h3><a id="unity-float-unit" class="anchor" href="#unity-float-unit" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>FLOAT UNIT INTEGRATION</h3></p>
 
 <p>Select the scene where you need the FloatAd-Unit to be displayed. Wherever you want to fetch or hide the FloatAd-Unit, just use the following function from GreedyGame.Runtime.Common
@@ -675,13 +689,19 @@ To show FloatAd-Unit</p>
 
 <p>To remove FloatAd-Unit </p>
 <pre>GreedyAdManager.Instance.RemoveAllAdHead ();</pre>
+</div>
 
-
-
+<button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">ANDROID SETUP</button>
+<div class="panel">
 <p><h4><strong>ANDROID SETUP</strong></h4></p>
 
 <p>[For users running a version of Unity earlier than 5.0] Navigate to Temp/StagingArea of your project directory and copy AndroidManifest.xml to Assets/Plugins/Android. Add the following tag to the AndroidManifest.xml file. And set application hardwareAccelerated=true </p>
+</div>
 
+
+
+<button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">ADVANCED CUSTOMIZATION DOCUMENTATION</button>
+<div class="panel">
 <p><h4><strong>ADVANCED CUSTOMIZATION DOCUMENTATION</strong></h4></p>
 
 <p><strong>Use the following imports</strong></p>
@@ -747,7 +767,12 @@ void OnGreedyEvent(RuntimeEvent greedy_events){
     Application.LoadLevel (PostLevel);
   }
 }</pre>
+</div>
 
+
+
+<button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">MARSHMALLOW COMPLIANCE</button>
+<div class="panel">
 <p><h3><strong>MARSHMALLOW COMPLIANCE : </strong></h3></p>
 <p><strong>CALLBACK METHOD IN GreedyAndroidAgent project WRAPPER :</strong> <code> onPermissionsUnavailable(ArrayList permissions) </code></p>
 
@@ -766,8 +791,12 @@ void OnGreedyEvent(RuntimeEvent greedy_events){
 </div>
 
 
+
+
+<button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">IMPORTANT TWEAKS</button>
+<div class="panel">
 <p><h3><a id="importanttweaks" class="anchor" href="#importanttweaks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>IMPORTANT TWEAKS : </h3></p>
-<p><strong>COCOS : Exiting the Game</strong><p>
+<p><strong>COCOS : Exiting the Game</strong></p>
 
 <p>If you are using any of the following function to exit from the game </p>
 
@@ -778,7 +807,7 @@ void OnGreedyEvent(RuntimeEvent greedy_events){
 </ul>
 <p> you should make sure that you are calling the below function just before exiting greedygame::GreedyGameSDK::unInstall();</p>
 
-<p><strong>NATIVE : Exiting the Game</strong><p>
+<p><strong>NATIVE : Exiting the Game</strong></p>
 
 <p>If you are using the following function to exit from the game </p>
 
@@ -788,7 +817,11 @@ void OnGreedyEvent(RuntimeEvent greedy_events){
 </ul>
 <p> you should make sure that you are calling the below function just before exiting </p> 
 <pre> greedyGameAgent.onActivityPaused(); </pre>
+</div>
 
+
+<button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">PROGUARD SETTINGS</button>
+<div class="panel">
 <p><h3><strong><a id="proguardsettings" class="anchor" href="#proguardsettings" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PROGUARD SETTINGS</strong></h3></p>
 <p> If you are using Proguard add the following to your Proguard settings ! </p>
 <pre>
@@ -802,7 +835,10 @@ void OnGreedyEvent(RuntimeEvent greedy_events){
 
 } 
 </pre>
+</div>
+</div>
 
+<div class="box" > 
 <p><strong><h3><a id="othermanifestchanges" class="anchor" href="#othermanifestchanges" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Recommended Manifest changes</h3></strong></p>
 <p>The GreedyGame SDK is connected with the activity lifecycle of your game. Generally Games works in either portrait or landscape mode for consistent user experience. Hence it is advisable not to recreate the activity on config changes which may happen due to power button press etc.
 To avoid this immediate activity creation and destroying overhead, add the following configChanges in the Manifest file.
@@ -812,8 +848,38 @@ To avoid this immediate activity creation and destroying overhead, add the follo
 <p>This is an optimization . The SDK will handle all related changes if your game supports multiple orientations.
 <strong>MANIFEST REQUIREMENTS :</strong> Add the following into the manifest of your project
 </p>
+</div>
 
 
+
+
+
+<div class="box" >
+<h3><font size="+2" color="#25383C">
+<a id="are-you-facing-issues-after-integration--" class="anchor" href="#are-you-facing-issues-after-integration--" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><em>ARE YOU FACING ISSUES AFTER INTEGRATION ?</em>
+</font></h3>
+
+<p>If you have already integrated the SDK after going through the integration guide and still if you face trouble or if you are stuck with something then verify the integration using the following forms. </p>
+
+<div style="text-align:center;">
+<h3><font color="#25383c"
+<a id="verifying-integration" class="anchor" href="#verifying-integration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>VERIFYING INTEGRATION</font></h3>
+</div>
+
+
+
+
+<div style="text-align:center;">
+<a href="http://goo.gl/forms/4CzvlVPMf5IkXd533" ><button class="ctrl-standard typ-subhed fx-bubbleDown">VERIFY NATIVE</button></a>
+    <a href="http://goo.gl/forms/gHuuDlgBczI64KMN2" ><button class="ctrl-standard typ-subhed fx-bubbleDown">VERIFY COCOS</button></a>
+    <a href="http://goo.gl/forms/jUnv2yxc2NbAV5Pa2" ><button class="ctrl-standard typ-subhed fx-bubbleDown">VERIFY UNITY</button></a>
+</div>
+</div>
+
+<ul>
+Remember and come back to this verification part if you face troubles after integration
+</ul>
+</div>
 <script type="text/javascript">
         function getGameID() {
 
