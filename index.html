@@ -66,11 +66,11 @@ function pictureMin(objectid) {
 
   
   <a href="#how-to-start-monetizing-with-greedygame-" class="smoothScroll">Initial Setup</a>
-  <a href="#verifying-integration" class="smoothScroll">Verify Integration</a>
   <a href="#native-integration-guide" class="smoothScroll" >Native Integration</a>
   <a href="#cocos-integration-guide" class="smoothScroll">Cocos Integration</a>
   <a href="#unity-integration-guide" class="smoothScroll">Unity Integration</a>
-  <a href="#importanttweaks" class="smoothScroll">Additional Tweaks</a>
+  <a href="#importanttweaksoverall" class="smoothScroll">Additional Tweaks</a>
+  <a href="#proguardsettingsoverall" class="smoothScroll">Proguard Settings</a>
   <a href="#verifying-integration" onmouseover="changeColor()" onmouseout="changeColorBack()"  id="issuesInIntegration" class="smoothScroll">Issues in Integration</a>
 
 </div>
@@ -227,13 +227,6 @@ function test(elID)
 </div>
 
 
-
-
-
-<ul>
-<li>PROGUARD SETTINGS</li>
-<li>RECOMMENDED MANIFEST CHANGE</li>
-</ul>
 
 
 
@@ -496,7 +489,37 @@ class GGListner implements IAgentListener{
 </pre>
 
 </div>
+
+<button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">IMPORTANT TWEAKS</button>
+<div class="panel">
+<p><h3><a id="importanttweaks" class="anchor" href="#importanttweaks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>IMPORTANT TWEAKS : </h3></p>
+<p><strong>COCOS : Exiting the Game</strong></p>
+
+<p>If you are using any of the following function to exit from the game </p>
+
+<ul>
+<li><code>exit(0) ;</code></li>
+
+<li><pre>CCDirector::sharedDirector()-&gt;end(); </pre></li>
+</ul>
+<p> you should make sure that you are calling the below function just before exiting greedygame::GreedyGameSDK::unInstall();</p>
+
+<p><strong>NATIVE : Exiting the Game</strong></p>
+
+<p>If you are using the following function to exit from the game </p>
+
+<ul>
+<li><code>System.exit(0);</code></li>
+
+</ul>
+<p> you should make sure that you are calling the below function just before exiting </p> 
+<pre> greedyGameAgent.onActivityPaused(); </pre>
 </div>
+
+<!--div that ends the box -->
+</div>
+
+
 
 
 
@@ -504,6 +527,8 @@ class GGListner implements IAgentListener{
 <h3>
 <font size="+3"><center><a id="cocos-integration-guide" class="anchor" href="#cocos-integration-guide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>COCOS INTEGRATION GUIDE</center></font></h3>
 
+
+<!--
 <ul>
 <li><strong><a href="#CocosBasicSetup" class="smoothScroll">BASIC SETUP</a> </strong></li>
 <li><strong><a href="#CocosInitialization" class="smoothScroll">INITIALIZATION OF SDK</a> </strong></li>
@@ -512,7 +537,7 @@ class GGListner implements IAgentListener{
 <li><strong><a href="#NativeOtherUtilities" class="smoothScroll">MARSHMALLOW COMPLIANCE</a> </strong></li>
 <li><strong><a href="#IAgentListener" class="smoothScroll">IMPORTANT TWEAKS</a> </strong></li>
 </ul>
-
+-->
 
 <button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">BASIC SETUP</button>
 <div class="panel">
@@ -523,7 +548,9 @@ Add this to your cocos2d-x project.Put all branded assets under folder Resources
 <blockquote> Resources/greedygame directory should only contain images and no sub-directories </blockquote>
 
 Declare the following string in strings.xml file under the res/values folder.
-"your-game-id-without-quotes"
+<pre>&lt;resources&gt;
+            &lt;string name="greedy_game_profile"&gt;<a id="gameidtext" >11111111</a>&lt;/string&gt;
+    &lt;/resources&gt;</pre>
 </div>
 
 
@@ -621,7 +648,63 @@ NATIVE AD UNIT INTEGRATION : </strong></p>
 <p>Whenever you want remove a float ad from the screen just call the following function.</p>
 <pre>greedygame::GreedyGameSDK::removeAdHead(); ​</pre>
 </div>
+
+<button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">IMPORTANT TWEAKS</button>
+<div class="panel">
+<p><h3><a id="importanttweaks" class="anchor" href="#importanttweaks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>IMPORTANT TWEAKS : </h3></p>
+<p><strong>COCOS : Exiting the Game</strong></p>
+
+<p>If you are using any of the following function to exit from the game </p>
+
+<ul>
+<li><code>exit(0) ;</code></li>
+
+<li><code>CCDirector::sharedDirector()-&gt;end(); </code></li>
+</ul>
+<p> you should make sure that you are calling the below function just before exiting </p>
+
+<pre> greedygame::GreedyGameSDK::unInstall(); </pre> 
+
+<p><strong>NATIVE : Exiting the Game</strong></p>
+
+<p>If you are using the following function to exit from the game </p>
+
+<ul>
+<li><code>System.exit(0);</code></li>
+
+</ul>
+<p> you should make sure that you are calling the below function just before exiting </p> 
+<pre> greedyGameAgent.onActivityPaused(); </pre>
 </div>
+
+
+<button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">PROGUARD SETTINGS</button>
+<div class="panel">
+<p><h3><strong><a id="proguardsettings" class="anchor" href="#proguardsettings" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PROGUARD SETTINGS</strong></h3></p>
+<p> If you are using Proguard add the following to your Proguard settings ! </p>
+<pre>
+-keep class com.greedygame.android.** { *;}
+
+-keepattributes JavascriptInterface
+
+-keepclassmembers class * {
+
+    @android.webkit.JavascriptInterface ;
+
+} 
+</pre>
+</div>
+
+<!-- box div ends here-->
+</div>
+
+
+
+
+
+
+
+
 
 
 <div class ="box">
@@ -805,7 +888,8 @@ void OnGreedyEvent(RuntimeEvent greedy_events){
 
 <li><code>CCDirector::sharedDirector()-&gt;end(); </code></li>
 </ul>
-<p> you should make sure that you are calling the below function just before exiting greedygame::GreedyGameSDK::unInstall();</p>
+<p> you should make sure that you are calling the below function just before exiting </p>
+<pre>greedygame::GreedyGameSDK::unInstall();</pre>
 
 <p><strong>NATIVE : Exiting the Game</strong></p>
 
@@ -851,6 +935,50 @@ To avoid this immediate activity creation and destroying overhead, add the follo
 </div>
 
 
+
+<div class="box">
+<p><h3><a id="importanttweaksoverall" class="anchor" href="#importanttweaks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>IMPORTANT TWEAKS : </h3></p>
+<p><strong>COCOS : Exiting the Game</strong></p>
+
+<p>If you are using any of the following function to exit from the game </p>
+
+<ul>
+<li><code>exit(0) ;</code></li>
+
+<li><code>CCDirector::sharedDirector()-&gt;end(); </code></li>
+</ul>
+<p> you should make sure that you are calling the below function just before exiting </p>
+<pre>greedygame::GreedyGameSDK::unInstall();</pre>
+
+<p><strong>NATIVE : Exiting the Game</strong></p>
+
+<p>If you are using the following function to exit from the game </p>
+
+<ul>
+<li><code>System.exit(0);</code></li>
+
+</ul>
+<p> you should make sure that you are calling the below function just before exiting </p> 
+<pre> greedyGameAgent.onActivityPaused(); </pre>
+</div>
+
+
+
+<div class="box">
+<p><h3><strong><a id="proguardsettingsoverall" class="anchor" href="#proguardsettings" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PROGUARD SETTINGS</strong></h3></p>
+<p> If you are using Proguard add the following to your Proguard settings ! </p>
+<pre>
+-keep class com.greedygame.android.** { *;}
+
+-keepattributes JavascriptInterface
+
+-keepclassmembers class * {
+
+    @android.webkit.JavascriptInterface ;
+
+} 
+</pre>
+</div>
 
 
 

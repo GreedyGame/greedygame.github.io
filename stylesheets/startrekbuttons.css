@@ -13,9 +13,9 @@ body::before {
 
 
 .typ-subhedsmall {
-  font-family: 'Arya', sans-serif;
-  font-size: 16px;
-  font-color:#848482;
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+  font-color:#d2d2d2;
   line-height: 20px;
   letter-spacing: 0;
 }

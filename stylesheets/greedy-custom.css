@@ -70,7 +70,7 @@
 
 
 .box {
-    background-color: #fff;
+    background-color: #FFFFF7;
     width :90%;
     border: 1px solid #888888;
     padding :20px;
@@ -86,7 +86,8 @@
 
 /* Style the buttons that are used to open and close the accordion panel */
 button.accordion {
-    background-color: #fff;
+    background-color: #FFFFF7
+   ;
     color: #444;
     cursor: pointer;
     padding: 10px;
@@ -103,16 +104,17 @@ button.accordion.active, button.accordion:hover {
 }
 
 div.panel {
-    padding: 0 18px;
-    background-color: white;
+    padding: 0px 10px;
+    background-color:#FFFFF7;
     max-height: 0;
     overflow: hidden;
+    border: 1px #ccbbaa;
     transition: 0.6s ease-in-out;
-    opacity: 0;
+    opacity: 80;
 }
 
 div.panel.show {
-    opacity: 1;
+    opacity: 80;
     max-height: 10000px; /* Whatever you like, as long as its more than the height of the content (on all screen sizes) */
 }
 
