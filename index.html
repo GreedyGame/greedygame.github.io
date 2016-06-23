@@ -70,6 +70,7 @@ function pictureMin(objectid) {
   <a font="Oswald" href="#cocos-integration-guide" class="smoothScroll">Cocos Integration</a>
   <a font="Oswald" href="#unity-integration-guide" class="smoothScroll">Unity Integration</a>
   <a font="Oswald" href="#importanttweaksoverall" class="smoothScroll">Additional Tweaks</a>
+  <a font="Oswald" href="#gradledependency" class="smoothScroll">Gradle Dependency</a>
   <a font="Oswald" href="#proguardsettingsoverall" class="smoothScroll">Proguard Settings</a>
   <a font="Oswald" href="#verifying-integration" onmouseover="changeColor()" onmouseout="changeColorBack()"  id="issuesInIntegration" class="smoothScroll">Issues in Integration</a>
 
@@ -203,6 +204,10 @@ function test(elID)
 </ul>
 </p>
 
+<div style="text-align:center;">
+<img src="images/guide/CreateGame-edit2.png" id="newgame-created" align='middle' onload="this.width/=1.5" onclick="modalOnClick('newgame-created')" alt="Create a new Game-Profile ID" >
+</div>
+
 <blockquote>
 <p>NB: if the game is not yet in playstore then you can use a dummy URL instead of playstore URL.</p>
 </blockquote>
@@ -263,9 +268,14 @@ function test(elID)
 <div class="panel">
 <h3><font size="+2">BASIC SETUP</font></h3>
 
-<p><strong><h3>ECLIPSE :</h3></strong> If you are developing the native android project using eclipse then download the SDK from the following link and import the greedy-android-agent project and add it as a library to your project. </p>
+<p><strong><h3>ECLIPSE :</h3></strong> If you are developing the native android project using eclipse import the greedy-android-agent project and add it as a library to your project from the SDK you downloaded from Github. </p>
 
 <p><strong><h3>ANDROID STUDIO :</h3></strong>  If you are on ANDROID STUDIO then find the aar of our SDK inside android-studio-aar folder and then import it as a module and then add it as a dependency to your project.</p>
+
+<p><strong><h3>GRADLE DEPENDENCY :</h3></strong>  Instead of downloading the sdk you can also add the following gradle dependency in your projects build.gradle file.</p>
+<pre>
+compile 'com.greedygame.android:greedynative:8.1'
+</pre>
 
 <p><strong><h3>MANIFEST REQUIREMENTS :</h3></strong>Include the following into your Manifest file </p>
 <pre>
@@ -316,13 +326,13 @@ function test(elID)
 <pre>public static GreedyGameAgent install(Activity activity, IAgentListener agentListener);
 GreedyGameAgent ggAgent = GreedyGameAgent.install(this,listener); </pre>
 <p><strong>GreedyGameAgent - Callbacks From IAgentListener</strong></p>
-<strong>IMPORTANT :</strong> Find the seperate section detailing about IAgentListener <strong><a href="#">HERE</a> </strong>
+<strong>IMPORTANT :</strong> IAgentListener is documented as a seperate segment.
 </p>
 
-<strong>GreedyGameAgent - init() :</strong> Initialize GreedyGameAgent and notify it regarding the assets that you are going to use in your game.
+<strong>GreedyGameAgent - init() :</strong> Here we simply initialize the GreedyGameAgent and define the assets within the game that we will be using to show ads.
 <ul>
-<li><strong>Step 1 :</strong> Create an array of units that you are using inside your game like shown below. You should be adding both the floatunits and the native units to the array. There are two ways of using the native units as shown in example 1 and 2 respectively.</li>
-<li><strong>Step 2 :</strong> Call init() function of GreedyGameAgent with the string array you have created and also specify the type of download you want to use.</li>
+<li><strong>Step 1 :</strong> Create an array of units that you are using inside your game like shown below. You should be adding both the float units and the native units to the array. There are two ways of using the native units as shown in example 1 and 2 respectively.</li>
+<li><strong>Step 2 :</strong> Call <code> init() </code> function of GreedyGameAgent with the string array you have created and also specify the type of download you want to use.</li>
 </ul>
 
 Example 1 : ( If you want to download the native units by ID )
@@ -350,9 +360,10 @@ NOTE
 <div class="panel">
 <p><h3><strong><a id="native-native-ad-units" class="anchor" href="#native-nativeadunits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NATIVE AD UNIT INTEGRATION : </strong></h3></p>
 
-<p>During init call we did during initialization we are actually marking all assets that needs to be branded. So in case there is a campaign available, the relevent native units will be downloaded and kept at a certain folder inside the memory of the device. So all you need to do is 
-Check whether a campaign is available using function 1 shown below.
-If a campaign is available replace the texture as shown in <strong> snippet 1 using function 2.</strong></p>
+<p>When init call as detailed above, is made, it marks all of the game's assets that needs to be branded. When a campaign is available, relevant native units are downloaded and stored in the memory of the user’s device. So all you need to do is 
+<ul>
+<li>Check whether a campaign is available using function 1 shown below. </li>
+<li>If a campaign is available replace the texture as shown in <strong> snippet 1 using function 2.</strong></p></li>
 
 <strong>Function 1 :</strong> <code>public String activeCampaign()</code> : <p>Returns campaign id of currently active and running campaign on device.</p>
 
@@ -606,7 +617,7 @@ Declare the following string in strings.xml file under the res/values folder.
 <button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">INITIALIZATION OF SDK</button>
 <div class="panel">
 <p><h3><strong><a id="CocosInitialization" class="anchor" href="#CocosInitialization" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>INITIALIZATION OF SDK </strong></h3></p>
-<p>In your Game's Cocos Android Activity's onCreate() function add the following code. Make sure that this initialization is done only inside onCreate() and not in onResume() or any other activity lifecycle methods.</p>
+<p>In your Game's Cocos Android Activity's onCreate() function add the following code. Make sure that this initialization is done only inside <code> onCreate() </code> and not in onResume() or any other activity lifecycle methods.</p>
 <p><strong>Snippet 1 : </strong></p>
 <pre>
         super.onCreate(savedInstanceState);
@@ -618,7 +629,7 @@ Declare the following string in strings.xml file under the res/values folder.
 
 <blockquote> use addFloatUnits(String floatID) and addNativeUnits(String filenamewithextension) for adding any number of native and float units you want in your game </blockquote>
 <p><strong>Fetching Campaigns </strong>
-​ In your Splash scene (very first scene of game), add following code in method SplashScene::init(). Where onInit and onProgress are callback functions. </p>
+​ In your Splash scene (very first scene of game), add following code in method <code> SplashScene::init(). </code> Where onInit and onProgress are callback functions. </p>
 
 <pre>greedygame::GreedyGameSDK::initialize(&amp;onInit, &amp;onProgress);</pre>
 
@@ -677,7 +688,7 @@ void onProgress(float f) {
 <div class="panel">
 <p><strong><a id="CocosNativeAdUnits" class="anchor" href="#CocosNativeAdUnits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
 NATIVE AD UNIT INTEGRATION : </strong></p>
-<p>Native branding in cocos are handled by the SDK itself. No additional codes need to be added. The only thing you need to make sure is that all units that needs to be branded are inside the greedygame folder inside assets folder and that you are adding those resource names as shown in this snippet here.</p>
+<p>Native branding in Cocos fits within the SDK and there is no need for additional code. Simply ensure that all units that need to be branded are inside the greedygame folder, found inside assets folder and that you are adding relevant resource names as shown in this snippet here. </p>
 </div>
 
 
@@ -780,7 +791,7 @@ NATIVE AD UNIT INTEGRATION : </strong></p>
 <p><h3><strong><a id="unity-basic-setup" class="anchor" href="#unity-basicsetup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>BASIC SETUP</strong></h3></p>
 
 <p>
-Download unity package from the following github link and import unity package into unity. 
+From the unity SDK that you downloaded from Github import the unity package into unity. 
 GreedyGameConfigPrefab : As shown in the following screenshot create a GreedyGameConfigPrefab. 
 </p>
 
@@ -818,16 +829,30 @@ GreedyGameConfigPrefab : As shown in the following screenshot create a GreedyGam
 
 <button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">FLOAT UNIT INTEGRATION</button>
 <div class="panel">
-<p><h3><a id="unity-float-unit" class="anchor" href="#unity-float-unit" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>FLOAT UNIT INTEGRATION</h3></p>
+<p><h3><a id="unity-float-unit" class="anchor" href="#unity-float-unit" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>FLOAT UNIT INTEGRATION USING CODE </h3></p>
 
-<p>Select the scene where you need the FloatAd-Unit to be displayed. Wherever you want to fetch or hide the FloatAd-Unit, just use the following function from GreedyGame.Runtime.Common
-To show FloatAd-Unit</p>
+<p>Select the scene where you need the FloatAd-Unit to be displayed. Wherever you want to fetch the Float Ad Unit, just use the following function from GreedyGame.Runtime.Common
+To show Float Ad Unit</p>
 
-<pre> GreedyAdManager.Instance.FetchAdHead (FloatAd_ID); </pre>
+<pre> GreedyAdManager.Instance.FetchAdHead ("float-123"); </pre>
 
 <p>To remove FloatAd-Unit </p>
 <pre>GreedyAdManager.Instance.RemoveAllAdHead ();</pre>
+
+<p><h3><a id="unity-float-unit" class="anchor" href="#unity-float-unit" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>FLOAT UNIT INTEGRATION USING SCRIPT </h3></p>
+
+<p>If you want the float unit to stay throughout a particular scene then all you need to do is add the AdHeadLoader.cs script as shown in the following image. Make sure that you insert the correct float unit id in the script.</p>
+
+<pre> GreedyAdManager.Instance.FetchAdHead ("float-123"); </pre>
+
+<p>To remove FloatAd-Unit </p>
+<pre>GreedyAdManager.Instance.RemoveAllAdHead ();</pre>
+
+
+
 </div>
+
+
 
 <button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">ANDROID SETUP</button>
 <div class="panel">
@@ -1063,6 +1088,15 @@ To avoid this immediate activity creation and destroying overhead, add the follo
 <p> you should make sure that you are calling the below function just before exiting </p> 
 <pre> greedyGameAgent.onActivityPaused(); </pre>
 </div>
+
+
+<div class="box">
+<p><h3><strong><a id="gradledependency" class="anchor" href="#gradledependency" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>GRADLE DEPENDENCY</strong></h3></p>
+<pre>
+compile 'com.greedygame.android:greedynative:8.1'
+</pre>
+</div>
+
 
 
 
