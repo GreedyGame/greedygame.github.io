@@ -65,13 +65,13 @@ function pictureMin(objectid) {
   
 
   
-  <a href="#how-to-start-monetizing-with-greedygame-" class="smoothScroll">Initial Setup</a>
-  <a href="#native-integration-guide" class="smoothScroll" >Native Integration</a>
-  <a href="#cocos-integration-guide" class="smoothScroll">Cocos Integration</a>
-  <a href="#unity-integration-guide" class="smoothScroll">Unity Integration</a>
-  <a href="#importanttweaksoverall" class="smoothScroll">Additional Tweaks</a>
-  <a href="#proguardsettingsoverall" class="smoothScroll">Proguard Settings</a>
-  <a href="#verifying-integration" onmouseover="changeColor()" onmouseout="changeColorBack()"  id="issuesInIntegration" class="smoothScroll">Issues in Integration</a>
+  <a font="Oswald" href="#how-to-start-monetizing-with-greedygame-" class="smoothScroll">Initial Setup</a>
+  <a font="Oswald" href="#native-integration-guide" class="smoothScroll" >Native Integration</a>
+  <a font="Oswald" href="#cocos-integration-guide" class="smoothScroll">Cocos Integration</a>
+  <a font="Oswald" href="#unity-integration-guide" class="smoothScroll">Unity Integration</a>
+  <a font="Oswald" href="#importanttweaksoverall" class="smoothScroll">Additional Tweaks</a>
+  <a font="Oswald" href="#proguardsettingsoverall" class="smoothScroll">Proguard Settings</a>
+  <a font="Oswald" href="#verifying-integration" onmouseover="changeColor()" onmouseout="changeColorBack()"  id="issuesInIntegration" class="smoothScroll">Issues in Integration</a>
 
 </div>
 
@@ -100,35 +100,24 @@ function pictureMin(objectid) {
 
 <a id="ads-that-people-love" class="anchor" href="#ads-that-people-love" aria-hidden="true" color="f00"><span aria-hidden="true" class="octicon octicon-link"></span></a><center>Ads that people love</center>
 
+<h4 class="anchor"> <center >GreedyGame powers you to merge branding experiences within your application. This creates a harmonious blend of effective branding, a seamless user experience and effective monetization.</center></h4>
+
+
 <h4>
 <a id="how-to-start-monetizing-with-greedygame-" class="anchor" href="#how-to-start-monetizing-with-greedygame-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to start Monetizing with GreedyGame :</h4>
 
 <p><strong>Signup :</strong> 
-Go to publisher.greedygame.com and signup for a greedygame account. The account will be verified and notified in your registered mail. If you are facing any issues to signup you can always write to <a href="mailto:support@greedygame.com">support@greedygame.com</a>. </p>
+Go to publisher.greedygame.com and signup for your account. Simply verify your account using the link you receive via email. If you need any help around this, we’re happy to help. Just drop us a note at <a href="mailto:support@greedygame.com">support@greedygame.com</a>. </p>
 
-<p><strong>Create a game-id :</strong> As shown in the screenshot click on AdUnit tab and press create new game. Fill in all the details. This will create a new game profile id which needs to be used at the time of
-integration.</p>
-
-<blockquote>
-<p>NB: if the game is not yet in playstore then you can use a dummy URL instead of playstore URL.</p>
-</blockquote>
-
-<div style="text-align:center;">
-<img src="images/guide/created-edited2.png" id="panel-created" align='middle' onload="this.width/=1.5" onclick="modalOnClick('panel-created')" alt="Publisher Panel" >
-</div>
-
-<p><strong>Identifying good ad-spots and uploading assets :</strong> Upload the textures used in your game after you create the game id. You can refer figure 2 point no. 4 for doing this. For each screen that needs a FloatAd unit create a seperate float unit by clicking on create float unit button as shown at point 3.</p>
-
-<blockquote>
-<p>NB : Note down the unit-id generated when you uploaded the textures and the float-id’s that were generated. </p>
-</blockquote>
 
 <h3>
-<a id="lets-familiarize-the-following-terms" class="anchor" href="#lets-familiarize-the-following-terms" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Lets familiarize the following terms</h3>
+<a id="lets-familiarize-the-following-terms" class="anchor" href="#lets-familiarize-the-following-terms" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>IMPORTANT TERMS</h3>
+<p > Before we get started with the integration, let’s brush through the definitions of some important terms that we’ll see referenced regularly. </p>
 
-<p><strong>Native-Units :</strong> The non clickable textures inside your game that is dynamically branded at runtime. The native unit is directly blended into the in-game textures, so as shown in the figure the size and the overall look and feel of the texture is not changed but rather the ad is blended seamlessly.
 
-<p><strong>Float-Units :</strong> The clickable ad unit from GreedyGame. On click of this button a window opens which basically displays HTML pages. The size shape and position of the float units are dynamic which means it can always be changed from the server side.</p>
+<p><strong>Native-Units :</strong> These are non clickable textures inside your game that are dynamically branded at runtime. The native unit is seamlessly blended into the in-game textures, so the look and feel of the textures remain the same and are simply enhanced with a branding experience. </p>
+
+<p><strong>Float-Units :</strong> This is a clickable ad-unit that hovers in at non-intrusive parts of the user’s screen. When a user clicks on this unit, it expands into a dynamic HTML window called the Engagement Window. This unit is highly adaptable and can be created to fit in contextually with the app. E.g. a cricket ball as a float unit in a cricket game or a helmet in a bike racing game.</p>
 
 <div id="cf">
   <img class="bottom" src="images/guide/mock-with ads-edit.png" />
@@ -198,14 +187,41 @@ function test(elID)
 </script>
 
 
-<p><strong>Engagement Window :</strong> Engagement window is basically a web view activity that displays a webpage, that opens upon clicking the float unit. </p>
+<p><strong>Engagement Window :</strong> The Engagement Window is a WebView activity that displays a webpage, that opens upon clicking the float unit. Users interact with the brand through meaningful engagement experiences within this window. </p>
 
 <div style="text-align:center;">
 <img id="nativeengage" src="images/guide/engagement window.png" align='middle' onload="this.width/=1.5" onclick="modalOnClick('nativeengage')" alt="Engagement window that opens on clicking float unit">
 </div>
 
-<p><strong>Campaigns :</strong> For clarity during integration lets just think of it as active ads. Campaign is available means ads are available and Campaign Not available means ads are not available. 
-                 .                            </p>
+<p><strong>Campaigns :</strong> An exhaustive list of the ads that are eligible to run on your games. This list may not contain any campaigns during setup and testing but we promise to fill it up once you’re done integrating. </p>
+
+<p><strong>Creating a game-id :</strong>
+<ul>
+<li><p> Step 1 : Click on the <strong> YOUR GAMES </strong> tab.</p></li>
+<li><p> Step 2 : Click <strong> NEW GAME </strong></p></li>
+<li><p> Step 3 : Fill in the requested details.</p></li>
+</ul>
+</p>
+
+<blockquote>
+<p>NB: if the game is not yet in playstore then you can use a dummy URL instead of playstore URL.</p>
+</blockquote>
+
+<div style="text-align:center;">
+<img src="images/guide/created-edited2.png" id="panel-created" align='middle' onload="this.width/=1.5" onclick="modalOnClick('panel-created')" alt="Publisher Panel" >
+</div>
+
+<p><strong>Identifying good ad-spots and uploading assets :</strong> Upload the textures used in your game after you create the game id. You can refer figure 2 point no. 4 for doing this. For each screen that needs a FloatAd unit create a seperate float unit by clicking on create float unit button as shown at point 3.</p>
+
+<blockquote>
+<p>NB : Note down the unit-id generated when you uploaded the textures and the float-id’s that were generated. </p>
+</blockquote>
+
+
+
+
+
+
 
 <div style="text-align:center;">
 <h3>
@@ -234,6 +250,8 @@ function test(elID)
 <h3>
 <font size="+3"><center><a id="native-integration-guide" class="anchor" href="#native-integration-guide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NATIVE INTEGRATION GUIDE</center></font></h3>
 
+<center><h3>Download the latest GreedyGame Native Android SDK from the following Github Link.</h3></center>
+<center><h4><strong><a href="https://github.com/GreedyGame/android-native-plugin/releases/latest"> GITHUB LINK </a></strong></h4></center>
 <!-- <ul>
 <li><strong><a href="#native-initsdk" class="smoothScroll">INITIALIZATION OF SDK</a> </strong></li>
 <li><strong><a href="#native-native-ad-units" class="smoothScroll">NATIVE AD UNIT INTEGRATION</a> </strong></li>
@@ -249,7 +267,32 @@ function test(elID)
 
 <p><strong><h3>ANDROID STUDIO :</h3></strong>  If you are on ANDROID STUDIO then find the aar of our SDK inside android-studio-aar folder and then import it as a module and then add it as a dependency to your project.</p>
 
-<p><strong><h3>MANIFEST REQUIREMENTS :</h3></strong>Manifest file needs to be updated as shown here</p>
+<p><strong><h3>MANIFEST REQUIREMENTS :</h3></strong>Include the following into your Manifest file </p>
+<pre>
+&lt;application&gt;
+&lt;!-- GreedyGame SDK&#39;s requirements start --&gt;
+   &lt;activity
+ android:name=&quot;com.greedygame.android.adhead.GGAdHeadActivity&quot;
+ android:configChanges=&quot;keyboardHidden|orientation|screenSize|screenLayout|layoutDirection&quot;
+ android:launchMode=&quot;singleTask&quot;
+ android:theme=&quot;@style/Theme.Transparent&quot;&gt;
+  &lt;/activity&gt;
+
+
+    &lt;receiver
+ android:name=&quot;com.greedygame.android.agent.GreedyRefReceiver&quot;
+ android:enabled=&quot;true&quot;
+ android:exported=&quot;true&quot;&gt;
+&lt;intent-filter&gt;
+&lt;action android:name=&quot;com.android.vending.INSTALL_REFERRER&quot;/&gt;
+&lt;action android:name=&quot;android.net.conn.CONNECTIVITY_CHANGE&quot;/&gt;
+&lt;action android:name=&quot;com.greedygame.broadcast&quot;/&gt;
+&lt;/intent-filter&gt;
+&lt;/receiver&gt;
+&lt;!-- GreedyGame SDK&#39;s requirements end --&gt;
+&lt;/application&gt;
+
+</pre>
 
 
 <p><h3><strong>GAME PROFILE ID :</strong></h3> Put your gameprofile id generated in this step into the Android xml values as string as shown below.</p>
@@ -313,24 +356,25 @@ If a campaign is available replace the texture as shown in <strong> snippet 1 us
 
 <strong>Function 1 :</strong> <code>public String activeCampaign()</code> : <p>Returns campaign id of currently active and running campaign on device.</p>
 
-<strong>Function 2 :</strong> <code>public String getActivePath()</code> :<p>Return path of folder, where assets of activeCampaign is stored. You can use this method to actually replace the default unit with branded texture !</p>
+<strong>Function 2 :</strong> <code>public String getActivePath()</code> :<p>Return path of folder, where assets of activeCampaign is stored. You can use this method to actually replace the default unit with branded texture.</p>
 
 <p><strong>SNIPPET 1 :</strong></p>
 <pre>
 private Bitmap getBitmapByResName(GreedyGameAgent ggAgent, String resName) {
-File file = new File(SplashScreenActivity.ggAgent.getActivePath()+ "/" + resName);
-if (file.exists()) {
-       return BitmapFactory.decodeFile(file.getAbsolutePath());
+    File file = new File(SplashScreenActivity.ggAgent.getActivePath() + "/" + resName);
+    if (file.exists()) {
+        return BitmapFactory.decodeFile(file.getAbsolutePath());
     }
-return null;
-    }
+    return null;
+}
 </pre>
 <p>The above snippet will check if a branded unit is available with the name "resName". At runtime you can replace your default texture with the branded texture using this utility function as shown below.</p>
 
 
 <p><strong>SNIPPET 2 :</strong></p>
 <p>The below code snippet shows the usage of SNIPPET 1 to actually replace texture with a branded texture</p>
-<pre>ImageView home = (ImageView) findViewById(R.id.player);
+<pre>
+ImageView home = (ImageView) findViewById(R.id.player);
 Bitmap bmp2 = getBitmapByResName(GreedyGameAgent.getInstance(), "unit-1941");
 home.setImageBitmap(bmp2);
 </pre>
@@ -343,7 +387,7 @@ home.setImageBitmap(bmp2);
 
 <button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">FLOAT AD UNIT INTEGRATION</button>
 <div class="panel">
-<p><h3><strong><a id="native-float-ad-units" class="anchor" href="#native-floatadunits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>FLOAT-AD-UNIT INTEGRATION :</strong></h3></p>
+<p><h3><strong><a id="native-float-ad-units" class="anchor" href="#native-floatadunits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>FLOAT AD UNIT INTEGRATION :</strong></h3></p>
 
 <p><strong>Initializing FloatAdLayout(Context context)</strong> </p>
 
@@ -356,15 +400,15 @@ LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 this.addContentView(floatAdlayout, params); 
 </pre>
 
-<p>Display float unit :  Once you have initialized floatAdLayout use the following function to display float-ad-unit.</p>
+<p>Display float unit :  Once you have initialized floatAdLayout use the following function to display float ad unit.</p>
 
 <p><strong>Function 1 :</strong> </p>
 <p><code>public void fetchHeadAd(String unit_id) throws AgentInitNotCalledException</code></p>
-<p>Whenever you need to display a float-unit ( clickable unit ) use this function as shown in the snippet below. ( Replace “float-100”  with the appropriate float unit in your game )</p>
+<p>Whenever you need to display a float ad unit ( clickable unit ) use this function as shown in the snippet below. ( Replace “float-123”  with the appropriate float unit in your game )</p>
 
 <p><strong>SNIPPET 1:</strong> </p>
 
-<pre>floatAdLayout.fetchHeadAd(“unit_id”);</pre>
+<pre>floatAdLayout.fetchHeadAd(“float-123”);</pre>
 
 <p>unit_id - Float unit id from panel.greedygame.com (e.g 'float-123')</p>
 
@@ -375,7 +419,7 @@ this.addContentView(floatAdlayout, params);
 <p><code><a id="floatCodeHolder" ></a></code></p>
 
 
-<p><strong>Remove float unit :</strong> </p>Whenever you need to hide a float-unit or if you need to load a new float unit then call the below function to remove the previous float unit from screen ! Also make sure that the new float unit that needs to be displayed is fetched after removing the previous float.</p>
+<p><strong>Remove float unit :</strong> </p>Whenever you want to remove a float ad unit from screen use the following function.</p>
     <p><pre>floatAdlayout.remove();</pre></p>
 </div>
 
@@ -405,18 +449,19 @@ this.addContentView(floatAdlayout, params);
 <p>Callback - when GreedyGameAgent gets Initialized </p>
 
 <pre>
-void onInit(OnInitEvent response){
-if(response == OnInitEvent.CAMPAIGN_NOT_AVAILABLE) {
-     /* no campaign is available at the moment !
-     you can proceed with the game or skip to the 
-     next scene */
-    } else if(response ==OnInitEvent.CAMPAIGN_AVAILABLE) {
-    /*In this case the download would 
-    have already begun in the background ! 
+void onInit(OnInitEvent response) {
+    if (response == OnInitEvent.CAMPAIGN_NOT_AVAILABLE) {
+        /* no campaign is available at the moment.
+        you can proceed with the game or skip to the 
+        next scene */
+    } else if (response == OnInitEvent.CAMPAIGN_AVAILABLE) {
+        /*In this case the download would 
+    have already begun in the background.
     Either you can wait till it completes 
     or you can skip to the next scene 
     and the ads will start showing as and when 
-    everything gets downloaded.
+    everything gets downloaded.*/
+    } * /
 }
 </pre>
 
@@ -430,7 +475,7 @@ if(response == OnInitEvent.CAMPAIGN_NOT_AVAILABLE) {
 <strong>Callback - when download of units get complete</strong>
 <pre>
 void onDownload() {
-// This callback notifies that the download of assets have been completed ! 
+// This callback notifies that the download of assets have been completed. 
 }
 </pre>
 <p>Called when new branded contents are downloaded so that new scene can fetch assets from getActivePath(). This function is called after and only after onInit callback.</p>
@@ -440,7 +485,7 @@ void onDownload() {
 void onError() {
 /* This callback notifies that the download 
 of assets have failed and 
-no ads can be served in this session ! */</p>
+no ads can be served in this session.*/</p>
 }
 </pre>
 <blockquote>Important : both onDownload() and onError() are called only after you get a callback on onInit(). If you get CAMPAIGN_NOT_AVAILABLE in onInit() function then no further callbacks will be supplied to onSuccess and onError().</blockquote>
@@ -465,23 +510,22 @@ no ads can be served in this session ! */</p>
 <h4><p><strong> Sample Implementation of IAgentListener</strong></p></h4>
 
 <pre>
-class GGListner implements IAgentListener{
+class GGListner implements IAgentListener {
     public void onProgress(float progress) {
         //Use this for showing progress bar
-        Log.i("GreedyGame Sample", "Downloaded = "+progress+"%");
+        Log.i("GreedyGame Sample", "Downloaded = " + progress + "%");
     }
     public void onDownload() {
-            isBranded = true;
+        isBranded = true;
     }
     public void onInit(OnInitEvent response) {
-        if(response == OnInitEvent.CAMPAIGN_AVAIALABLE ){
-            //waiting for onDownload or onError callback ! 
-        }else if(response == OnInitEvent.CAMPAIGN_NOT_AVAIALABLE ){
+        if (response == OnInitEvent.CAMPAIGN_AVAIALABLE) {
+            //waiting for onDownload or onError callback. 
+        } else if (response == OnInitEvent.CAMPAIGN_NOT_AVAIALABLE) {
             isBranded = false;
         }
     }
-    public void onPermissionsUnavailable(ArrayList permissions) {
-    }
+    public void onPermissionsUnavailable(ArrayList permissions) {}
     public void onError() {
         isBranded = false;
     }
@@ -528,6 +572,8 @@ class GGListner implements IAgentListener{
 <font size="+3"><center><a id="cocos-integration-guide" class="anchor" href="#cocos-integration-guide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>COCOS INTEGRATION GUIDE</center></font></h3>
 
 
+<center><h3>Download the latest GreedyGame Cocos2DX SDK from the following Github Link.</h3></center>
+<center><h4><strong><a href="https://github.com/GreedyGame/cocos2dx-plugin/releases/latest"> GITHUB LINK </a></strong></h4></center>
 <!--
 <ul>
 <li><strong><a href="#CocosBasicSetup" class="smoothScroll">BASIC SETUP</a> </strong></li>
@@ -542,9 +588,11 @@ class GGListner implements IAgentListener{
 <button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">BASIC SETUP</button>
 <div class="panel">
 <p><h3><strong><a id="CocosBasicSetup" class="anchor" href="#CocosBasicSetup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>BASIC SETUP : </strong></h3></p>
-Download Android library project from Current_sdk/proj.android.
-You will find a folder named Classes. In this folder you will find GreedyGameSDK.h . iOS and Android will share this header file. 
-Add this to your cocos2d-x project.Put all branded assets under folder Resources/greedygame ​
+<ul>
+<li>Inside the SDK you downloaded from Github find the android project under Current_sdk/proj.android. Import this project to your IDE.</li>
+<li>You will find a folder named Classes. In this folder you will find GreedyGameSDK.h header file which will be used by Android platform.</li>
+<li>Add this to your cocos2d-x project.Put all branded assets under folder Resources/greedygame ​</li>
+</ul>
 <blockquote> Resources/greedygame directory should only contain images and no sub-directories </blockquote>
 
 Declare the following string in strings.xml file under the res/values folder.
@@ -580,28 +628,28 @@ Declare the following string in strings.xml file under the res/values folder.
 
 <pre>
 void onInit(int event) {
-	
-	CCLog( "onInit %d", event);
-/*
-* CAMPAIGN_NOT_AVAILABLE, -1 = campaign is not available<br>
-* CAMPAIGN_AVAILABLE, 1 = campaign is available 
-* CAMPAIGN_DOWNLOADED, 2 = new campaign is Downloaded
-*/
-int isBranded = -1;
-if(event == CAMPAIGN_AVAILABLE){
-  isBranded = 1;
-} else if(event == CAMPAIGN_NOT_AVAILABLE){
-  isBranded = 0;
-} else if(event == CAMPAIGN_DOWNLOADED) {
-  isBranded = 1;
-}
 
-if(isBranded == 1){
-  greedygame::GreedyGameSDK::fetchAdHead("");
-  CCDirector *pDirector = CCDirector::sharedDirector();
-  CCScene *pScene = HelloWorld::scene();
-  pDirector-replaceScene(pScene);
- }
+    CCLog("onInit %d", event);
+    /*
+     * CAMPAIGN_NOT_AVAILABLE, -1 = campaign is not available<br>
+     * CAMPAIGN_AVAILABLE, 1 = campaign is available
+     * CAMPAIGN_DOWNLOADED, 2 = new campaign is Downloaded
+     */
+    int isBranded = -1;
+    if (event == CAMPAIGN_AVAILABLE) {
+        isBranded = 1;
+    } else if (event == CAMPAIGN_NOT_AVAILABLE) {
+        isBranded = 0;
+    } else if (event == CAMPAIGN_DOWNLOADED) {
+        isBranded = 1;
+    }
+
+    if (isBranded == 1) {
+        greedygame::GreedyGameSDK::fetchAdHead("");
+        CCDirector * pDirector = CCDirector::sharedDirector();
+        CCScene * pScene = HelloWorld::scene();
+        pDirector - replaceScene(pScene);
+    }
 }
 </pre>
 
@@ -609,11 +657,15 @@ if(isBranded == 1){
 <strong><h4>onProgress</h4></strong>
 <pre>
 void onProgress(float f) {
-    CCLog( "downloadProgress &gt; : %f", f);
+    CCLog("downloadProgress &gt; : %f", f);
     ostringstream myString;
-    myString &lt;&lt; "Loading progress " &lt;&lt; f &lt;&lt;"%";
+    myString &lt; &lt;
+    "Loading progress " &lt; &lt;
+    f &lt; &lt;
+    "%";
     std::string s = myString.str();
-    pLabel-&gt;setString(s.c_str());
+    pLabel - &gt;
+    setString(s.c_str());
 }
 </pre>
 </div>
@@ -681,7 +733,7 @@ NATIVE AD UNIT INTEGRATION : </strong></p>
 <button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">PROGUARD SETTINGS</button>
 <div class="panel">
 <p><h3><strong><a id="proguardsettings" class="anchor" href="#proguardsettings" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PROGUARD SETTINGS</strong></h3></p>
-<p> If you are using Proguard add the following to your Proguard settings ! </p>
+<p> If you are using Proguard add the following to your Proguard settings. </p>
 <pre>
 -keep class com.greedygame.android.** { *;}
 
@@ -711,6 +763,9 @@ NATIVE AD UNIT INTEGRATION : </strong></p>
 <h3>
 <font size="+3"><center><a id="unity-integration-guide" class="anchor" href="#unity-integration-guide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>UNITY INTEGRATION GUIDE</center></font></h3>
 
+
+<center><h3>Download the latest GreedyGame Unity SDK from the following Github Link.</h3></center>
+<center><h4><strong><a href="https://github.com/GreedyGame/unity-plugin/releases/latest"> GITHUB LINK </a></strong></h4></center>
 <!--
 <ul>
 <li><strong><a href="#unity-basicsetup" class="smoothScroll" >BASIC SETUP</a></strong></li>
@@ -757,7 +812,7 @@ GreedyGameConfigPrefab : As shown in the following screenshot create a GreedyGam
 <img id = "unityadunit" src="images/guide/unity/2_attached_monobehaviour.png" align='middle' onload="width = this.width/=2;" onclick="modalOnClick('unityadunit')" alt="Attach SharedAdUnit to texture">
 <img id = "unityadunit2" src="images/guide/unity/5_link_unit_ids.png" align='middle' onload="width = this.width/=2;" onclick="modalOnClick('unityadunit2')" alt="Adding the correct unit-id">
 
-<p>In the namespace field add the appropriate native ad unit id that you have added into the GreedyGameConfigPrefab. Once you do that the yellow color will change to green which means its good to go !</p>
+<p>In the namespace field add the appropriate native ad unit id that you have added into the GreedyGameConfigPrefab. Once you do that the yellow color will change to green which means its good to go. </p>
 </div>
 
 
@@ -827,29 +882,31 @@ init(String GameId, String[] AdUnits, Boolean isDebug, Boolean isLazyLoad, OnGre
 <strong>Example</strong>
 <pre>
 void Start() {
-  if (isSupported) {
-    GlobalConfig[] ggLoaders = Resources.FindObjectsOfTypeAll ();
-    if(ggLoaders != null &amp;&amp; ggLoaders.Length != 1){
-      isSupported = false;
-      Debug.LogError("None or multuple occurrence of GlobalConfig object found!");
-      return;
+    if (isSupported) {
+        GlobalConfig[] ggLoaders = Resources.FindObjectsOfTypeAll();
+        if (ggLoaders != null & amp; & amp; ggLoaders.Length != 1) {
+            isSupported = false;
+            Debug.LogError("None or multuple occurrence of GlobalConfig object found");
+            return;
+        }
+        GlobalConfig ggConfig = ggLoaders[0];
+        ggAdManager.init(ggConfig.GameId, ggConfig.AdUnits.ToArray(), ggConfig.isDebug, ggConfig.isLazyLoad, OnGreedyEvent);
     }
-    GlobalConfig ggConfig = ggLoaders [0];
-    ggAdManager.init (ggConfig.GameId, ggConfig.AdUnits.ToArray (), ggConfig.isDebug, ggConfig.isLazyLoad, OnGreedyEvent);
-  }
-}</pre>
+}
+</pre>
 
 <h4><strong>OnGreedyEvent</strong></h4>
 <p>Callback function for RuntimeEvent</p>
 <strong>Example</strong>
 <pre>
-void OnGreedyEvent(RuntimeEvent greedy_events){
-  if (greedy_events == RuntimeEvent.CAMPAIGN_NOT_AVAILABLE || 
-      greedy_events == RuntimeEvent.CAMPAIGN_DOWNLOAD_ERROR) {
-  //Goto play scene if server reponse is recevied
-    Application.LoadLevel (PostLevel);
-  }
-}</pre>
+void OnGreedyEvent(RuntimeEvent greedy_events) {
+    if (greedy_events == RuntimeEvent.CAMPAIGN_NOT_AVAILABLE ||
+        greedy_events == RuntimeEvent.CAMPAIGN_DOWNLOAD_ERROR) {
+        //Goto play scene if server reponse is recevied
+        Application.LoadLevel(PostLevel);
+    }
+}
+</pre>
 </div>
 
 
@@ -873,7 +930,12 @@ void OnGreedyEvent(RuntimeEvent greedy_events){
 <blockquote> The above strings itself are returned in the argument if they are not available.</blockquote>>
 </div>
 
-
+<button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">VIDEO TUTORIAL</button>
+<div class="panel">
+<iframe width="420" height="315"
+src="http://www.youtube.com/embed/XGSy3_Czz8k?autoplay=0">
+</iframe>
+</div>
 
 
 <button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">IMPORTANT TWEAKS</button>
@@ -904,10 +966,13 @@ void OnGreedyEvent(RuntimeEvent greedy_events){
 </div>
 
 
+
+
+
 <button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">PROGUARD SETTINGS</button>
 <div class="panel">
 <p><h3><strong><a id="proguardsettings" class="anchor" href="#proguardsettings" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PROGUARD SETTINGS</strong></h3></p>
-<p> If you are using Proguard add the following to your Proguard settings ! </p>
+<p> If you are using Proguard add the following to your Proguard settings. </p>
 <pre>
 -keep class com.greedygame.android.** { *;}
 
@@ -923,14 +988,51 @@ void OnGreedyEvent(RuntimeEvent greedy_events){
 </div>
 
 <div class="box" > 
+<p><strong><h3><a id="mandatorymanifest" class="anchor" href="#mandatorymanifest" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Mandatory Manifest Requirements</h3></strong></p>
+<p>The following manifest requirements are mandatory.
+</p>
+
+<pre>
+&lt;application&gt;
+    &lt;!-- GreedyGame SDK&#39;s requirements start --&gt;
+    &lt;activity android:name=&quot;com.greedygame.android.adhead.GGAdHeadActivity&quot; 
+    android:configChanges=&quot;keyboardHidden|orientation|screenSize|screenLayout|layoutDirection&quot; 
+    android:launchMode=&quot;singleTask&quot; 
+    android:theme=&quot;@style/Theme.Transparent&quot;&gt;
+    &lt;/activity&gt;
+
+
+    &lt;receiver android:name=&quot;com.greedygame.android.agent.GreedyRefReceiver&quot; 
+    android:enabled=&quot;true&quot; 
+    android:exported=&quot;true&quot;&gt;
+        &lt;intent-filter&gt;
+            &lt;action android:name=&quot;com.android.vending.INSTALL_REFERRER&quot; /&gt;
+            &lt;action android:name=&quot;android.net.conn.CONNECTIVITY_CHANGE&quot; /&gt;
+            &lt;action android:name=&quot;com.greedygame.broadcast&quot; /&gt;
+        &lt;/intent-filter&gt;
+    &lt;/receiver&gt;
+    &lt;!-- GreedyGame SDK&#39;s requirements end --&gt;
+&lt;/application&gt;
+
+</pre>
+</div>
+
+
+
+
+<div class="box" > 
 <p><strong><h3><a id="othermanifestchanges" class="anchor" href="#othermanifestchanges" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Recommended Manifest changes</h3></strong></p>
 <p>The GreedyGame SDK is connected with the activity lifecycle of your game. Generally Games works in either portrait or landscape mode for consistent user experience. Hence it is advisable not to recreate the activity on config changes which may happen due to power button press etc.
 To avoid this immediate activity creation and destroying overhead, add the following configChanges in the Manifest file.
 
 </p>
-
+<pre>
+&lt;activity
+ android:name=&quot;com.package.YourActivity&quot;
+ android:configChanges=&quot;keyboardHidden|orientation|screenSize|screenLayout|layoutDirection&quot;&gt;
+&lt;/activity&gt;
+</pre>
 <p>This is an optimization . The SDK will handle all related changes if your game supports multiple orientations.
-<strong>MANIFEST REQUIREMENTS :</strong> Add the following into the manifest of your project
 </p>
 </div>
 
@@ -966,7 +1068,7 @@ To avoid this immediate activity creation and destroying overhead, add the follo
 
 <div class="box">
 <p><h3><strong><a id="proguardsettingsoverall" class="anchor" href="#proguardsettings" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PROGUARD SETTINGS</strong></h3></p>
-<p> If you are using Proguard add the following to your Proguard settings ! </p>
+<p> If you are using Proguard add the following to your Proguard settings.</p>
 <pre>
 -keep class com.greedygame.android.** { *;}
 
@@ -1004,17 +1106,13 @@ To avoid this immediate activity creation and destroying overhead, add the follo
 </div>
 </div>
 
-<ul>
-Remember and come back to this verification part if you face troubles after integration
-</ul>
 </div>
 <script type="text/javascript">
         function getGameID() {
 
             var input = document.getElementById("gameidinput").value;
             if (input.length != 8) {
-                alert("The game id that gets generated from panel.greedygame.com is 8 digits long ! Please correct your game id ");
-                 ggAlertDisplay('The game id that gets generated from panel.greedygame.com is 8 digits long ! Please correct your game id ');
+                alert("The game id that gets generated from panel.greedygame.com is 8 digits long. Please correct your game id ");
                 return;
             }
            document.getElementById("gameidheading").innerHTML = "GameProfileId : " + input ;
@@ -1062,7 +1160,9 @@ Remember and come back to this verification part if you face troubles after inte
 <script type="text/javascript">
 /* Toggle between adding and removing the "active" and "show" classes when the user clicks on one of the "Section" buttons. The "active" class is used to add a background color to the current button when its belonging panel is open. The "show" class is used to open the specific accordion panel */
 var acc = document.getElementsByClassName("accordion");
+var acchide = document.getElementsByClassName("accordion-hide");
 var i;
+var j;
 
 for (i = 0; i < acc.length; i++) {
     acc[i].onclick = function(){
@@ -1072,11 +1172,6 @@ for (i = 0; i < acc.length; i++) {
 }
 </script>
 
-
-
-<p>
-&lt;!-- GreedyGame SDK's requirements end --&gt;
-</p>
         </section>
 
         

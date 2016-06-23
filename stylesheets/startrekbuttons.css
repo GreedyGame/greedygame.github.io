@@ -20,6 +20,15 @@ body::before {
   letter-spacing: 0;
 }
 
+
+.typ-subhedtoosmall {
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  font-color:#d2d2d2;
+  line-height: 15px;
+  letter-spacing: 0;
+}
+
 /* lets create a container and put it in the middle */
 .container {
   height: 100%;

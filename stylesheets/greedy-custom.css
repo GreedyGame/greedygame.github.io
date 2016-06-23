@@ -7,7 +7,8 @@
     z-index: 1; /* Stay on top */
     top: 0;
     left: 0;
-    background-color: #2d2d2d; /* Black*/
+    
+    background-color: #0A1612;
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 100px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
@@ -20,7 +21,10 @@
     font-size: 20px;
     color: #818181;
     display: block;
-    transition: 0.3s
+    box-shadow: 0px 0px 8px #000;
+    transition: 0.3s;
+   
+    
 }
 
 
@@ -28,6 +32,9 @@
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover, .offcanvas a:focus{
     color: #f1f1f1;
+    background-color: #1A2930;
+    box-shadow: 0px 0px 8px #000;
+    
 }
 
 
@@ -70,7 +77,7 @@
 
 
 .box {
-    background-color: #FFFFF7;
+    background-color: #E9E9E9;
     width :90%;
     border: 1px solid #888888;
     padding :20px;
@@ -86,7 +93,7 @@
 
 /* Style the buttons that are used to open and close the accordion panel */
 button.accordion {
-    background-color: #FFFFF7
+    background-color: #E9E9E9
    ;
     color: #444;
     cursor: pointer;
@@ -98,6 +105,21 @@ button.accordion {
     transition: 0.4s;
 }
 
+button.accordion-hide {
+    background-color: #E9E9E9
+   ;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    border : 0px;
+    outline: none;
+    transition: 0.4s;
+}
+
+
+
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 button.accordion.active, button.accordion:hover {
     background-color: #d2d2d2;
@@ -105,7 +127,7 @@ button.accordion.active, button.accordion:hover {
 
 div.panel {
     padding: 0px 10px;
-    background-color:#FFFFF7;
+    background-color:#E9E9E9;
     max-height: 0;
     overflow: hidden;
     border: 1px #ccbbaa;
@@ -120,9 +142,9 @@ div.panel.show {
 
 
 button.accordion:after {
-    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    content: '>'; /* Unicode character for "plus" sign (+) */
     font-size: 13px;
-    color: #777;
+    color: #000;
     float: right;
     margin-left: 5px;
 }
