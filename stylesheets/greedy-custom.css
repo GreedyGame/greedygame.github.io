@@ -20,11 +20,22 @@
     font-size: 20px;
     color: #373737;
     display: block;
+    font-family: 'Oswald';
     transition: 0.3s;
    
     
 }
 
+.sidenav .sideclose {
+    background-color:#C0B283;
+
+}
+
+.sidenav .sideclose:hover {
+    background-color: #C0B283;
+    color:#fff;
+    
+}
 
 
 /* When you mouse over the navigation links, change their color */
@@ -37,13 +48,15 @@
 
 
 /* Position and style the close button (top right corner) */
-.closebtn {
+.sideclose {
     position: absolute;
     top: 0;
-    right: 25px;
+    right: 40px;
     font-size: 36px !important;
     margin-left: 50px;
 }
+
+
 
 .myButton {
      height: 100%;
