@@ -318,7 +318,7 @@ compile 'com.greedygame.android:greedynative:8.1'
 <p><h3><strong><a id="native-initsdk" class="anchor" href="#native-initsdk" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>INITIALIZATION OF SDK</strong></h3></p>
 
 <p>
-<strong>GreedyGameAgent - Install :</strong> Install the GreedygameAgent in splash screen activity's ( launcher activity ) onCreate() method.</p>
+<strong>GreedyGameAgent - Install :</strong> Install the GreedygameAgent in splash screen activity's ( launcher activity ) <code> onCreate() </code> method.</p>
 <p>
 <pre>public static GreedyGameAgent install(Activity activity, IAgentListener agentListener);
 GreedyGameAgent ggAgent = GreedyGameAgent.install(this,listener); </pre>
@@ -347,7 +347,7 @@ NOTE
 <ul>
 <li>Float units are always passed with ID's. </li>
 <li>For each native unit that you upload to panel.greedygame.com a particular unit-id is generated. Use those ID's while DOWNLOADING_BY_ID. </li>
-<li><p>Call ggAgent.init() function only inside onCreate of your starting activity.</p></li>
+<li><p>Call <code> ggAgent.init() </code> function only inside <code> onCreate() </code> function of your starting activity.</p></li>
 </ul>
 </div>
 </div>
@@ -458,7 +458,7 @@ this.addContentView(floatAdlayout, params);
 <div class="box2">
 <h3>
 <font size="+2"><a id="IAgentListener" class="anchor" href="#IAgentListener" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Interface IAgentListener</font></h3>
-<p>Class Overview It is used as a callback listener and is passed as an argument for GreedyGameAgent.install() method ( install method )</p>
+<p>Class Overview It is used as a callback listener and is passed as an argument for <code> GreedyGameAgent.install() </code> method ( install method )</p>
 
 <strong>Methods inside IAgentListener   : </strong>
 <p>Callback - when GreedyGameAgent gets Initialized </p>
@@ -493,7 +493,7 @@ void onDownload() {
 // This callback notifies that the download of assets have been completed. 
 }
 </pre>
-<p>Called when new branded contents are downloaded so that new scene can fetch assets from getActivePath(). This function is called after and only after onInit callback.</p>
+<p>Called when new branded contents are downloaded so that new scene can fetch assets <code> from getActivePath(). </code> This function is called after and only after onInit callback.</p>
 
 <p><strong>Callback - when download of units fail</strong>
 <pre>
@@ -503,7 +503,7 @@ of assets have failed and
 no ads can be served in this session.*/</p>
 }
 </pre>
-<blockquote>Important : both onDownload() and onError() are called only after you get a callback on onInit(). If you get CAMPAIGN_NOT_AVAILABLE in onInit() function then no further callbacks will be supplied to onSuccess and onError().</blockquote>
+<blockquote>Important : both <code> onDownload() </code> and <code> onError() </code> are called only after you get a callback on onInit(). If you get CAMPAIGN_NOT_AVAILABLE in <code> onInit() </code> function then no further callbacks will be supplied to <code> onSuccess() </code> and <code> onError() </code> .</blockquote>
 
 
 <p><strong>Callback - when there are unavailable permissions</strong></p>
@@ -557,23 +557,12 @@ class GGListner implements IAgentListener {
 <div class="panel">
 <div class="box2">
 <p><h3><a id="importanttweaks" class="anchor" href="#importanttweaks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>IMPORTANT TWEAKS : </h3></p>
-<p><strong>COCOS : Exiting the Game</strong></p>
-
-<p>If you are using any of the following function to exit from the game </p>
-
-<ul>
-<li><code>exit(0) ;</code></li>
-
-<li><pre>CCDirector::sharedDirector()-&gt;end(); </pre></li>
-</ul>
-<p> you should make sure that you are calling the below function just before exiting greedygame::GreedyGameSDK::unInstall();</p>
-
-<p><strong>NATIVE : Exiting the Game</strong></p>
 
 <p>If you are using the following function to exit from the game </p>
 
 <ul>
 <li><code>System.exit(0);</code></li>
+<li><code>android.os.Process.killProcess(android.os.Process.myPid());</code></li>
 
 </ul>
 <p> you should make sure that you are calling the below function just before exiting </p> 
@@ -628,7 +617,7 @@ Declare the following string in strings.xml file under the res/values folder.
 <div class="panel">
 <div class="box2">
 <p><h3><strong><a id="CocosInitialization" class="anchor" href="#CocosInitialization" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>INITIALIZATION OF SDK </strong></h3></p>
-<p>In your Game's Cocos Android Activity's onCreate() function add the following code. Make sure that this initialization is done only inside <code> onCreate() </code> and not in onResume() or any other activity lifecycle methods.</p>
+<p>In your Game's Cocos Android Activity's <code> onCreate() </code> function add the following code. Make sure that this initialization is done only inside <code> onCreate() </code> and not in <code> onResume()</code> or any other activity lifecycle methods.</p>
 <p><strong>Snippet 1 : </strong></p>
 <pre>
         super.onCreate(savedInstanceState);
@@ -638,7 +627,7 @@ Declare the following string in strings.xml file under the res/values folder.
         AdsGreedyGame.addNativeUnits("Projectile.png");
 </pre>
 
-<blockquote> use addFloatUnits(String floatID) and addNativeUnits(String filenamewithextension) for adding any number of native and float units you want in your game </blockquote>
+<blockquote> use <code> addFloatUnits(String floatID) </code> and <code> addNativeUnits(String filenamewithextension) </code> for adding any number of native and float units you want in your game </blockquote>
 <p><strong>Fetching Campaigns </strong>
 ​ In your Splash scene (very first scene of game), add following code in method <code> SplashScene::init(). </code> Where onInit and onProgress are callback functions. </p>
 
@@ -746,16 +735,6 @@ NATIVE AD UNIT INTEGRATION : </strong></p>
 
 <pre> greedygame::GreedyGameSDK::unInstall(); </pre> 
 
-<p><strong>NATIVE : Exiting the Game</strong></p>
-
-<p>If you are using the following function to exit from the game </p>
-
-<ul>
-<li><code>System.exit(0);</code></li>
-
-</ul>
-<p> you should make sure that you are calling the below function just before exiting </p> 
-<pre> greedyGameAgent.onActivityPaused(); </pre>
 </div>
 </div>
 
@@ -1136,6 +1115,7 @@ To avoid this immediate activity creation and destroying overhead, add the follo
 
 <div class="box"  id="gradledependency"  href="#gradledependency" >
 <p><h3><strong><a class="anchor"  aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>GRADLE DEPENDENCY</strong></h3></p>
+<p> Include the following gradle dependency inside your build.gradle file.
 <pre>
 compile 'com.greedygame.android:greedynative:8.1'
 </pre>
