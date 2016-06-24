@@ -266,6 +266,7 @@ function test(elID)
 </ul>  -->
 <button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">BASIC SETUP</button>
 <div class="panel">
+<div class="box">
 <h3><font size="+2">BASIC SETUP</font></h3>
 
 <p><strong><h3>ECLIPSE :</h3></strong> If you are developing the native android project using eclipse import the greedy-android-agent project and add it as a library to your project from the SDK you downloaded from Github. </p>
@@ -353,18 +354,20 @@ NOTE
 <li><p>Call ggAgent.init() function only inside onCreate of your starting activity.</p></li>
 </ul>
 </div>
+</div>
 
 
 
 <button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">NATIVE AD UNIT INTEGRATION</button>
 <div class="panel">
+<div class="box2">
 <p><h3><strong><a id="native-native-ad-units" class="anchor" href="#native-nativeadunits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NATIVE AD UNIT INTEGRATION : </strong></h3></p>
 
-<p>When init call as detailed above, is made, it marks all of the game's assets that needs to be branded. When a campaign is available, relevant native units are downloaded and stored in the memory of the user’s device. So all you need to do is 
+<p>When init call as detailed above, is made, it marks all of the game's assets that needs to be branded. When a campaign is available, relevant native units are downloaded and stored in the memory of the user’s device. So all you need to do is </p>
 <ul>
 <li>Check whether a campaign is available using function 1 shown below. </li>
 <li>If a campaign is available replace the texture as shown in <strong> snippet 1 using function 2.</strong></p></li>
-
+</ul>
 <strong>Function 1 :</strong> <code>public String activeCampaign()</code> : <p>Returns campaign id of currently active and running campaign on device.</p>
 
 <strong>Function 2 :</strong> <code>public String getActivePath()</code> :<p>Return path of folder, where assets of activeCampaign is stored. You can use this method to actually replace the default unit with branded texture.</p>
@@ -391,6 +394,7 @@ home.setImageBitmap(bmp2);
 </pre>
 <blockquote>Note : getActivePath will return null if there is no active theme</blockquote>
 </div>
+</div>
 
 
 
@@ -398,6 +402,7 @@ home.setImageBitmap(bmp2);
 
 <button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">FLOAT AD UNIT INTEGRATION</button>
 <div class="panel">
+<div class="box2">
 <p><h3><strong><a id="native-float-ad-units" class="anchor" href="#native-floatadunits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>FLOAT AD UNIT INTEGRATION :</strong></h3></p>
 
 <p><strong>Initializing FloatAdLayout(Context context)</strong> </p>
@@ -427,11 +432,12 @@ this.addContentView(floatAdlayout, params);
 <h4 id="floatCode"><font color="#2d2d2d"> <strong>Enter your float unit id</strong> </font> </h4>
     <input type="text" id="floatInput" autofocus placeholder = "enter float unit id" />
     <button class="ctrl-standard typ-subhedsmall fx-bubbleDown" onclick="getFloatCode()" >Generate Code </button>
-<p><code><a id="floatCodeHolder" ></a></code></p>
+<p><a id="floatCodeHolder" ></a></p>
 
 
 <p><strong>Remove float unit :</strong> </p>Whenever you want to remove a float ad unit from screen use the following function.</p>
     <p><pre>floatAdlayout.remove();</pre></p>
+</div>
 </div>
 
 
@@ -439,6 +445,7 @@ this.addContentView(floatAdlayout, params);
 
 <button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">UTILITIES METHOD</button>
 <div class="panel">
+<div class="box2">
 <p><h3><strong><a id="NativeOtherUtilities" class="anchor" href="#NativeOtherUtilities" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>OTHER UTILITIES METHOD : </strong></h3></p>
 
 <p><strong>Set sdk into debug mode</strong></p>
@@ -447,11 +454,12 @@ this.addContentView(floatAdlayout, params);
 <p><strong>Enable debug logs</p></strong>
 <p><code>public void setDebugLog(boolean b)</p></code>
 </div>
-
+</div>
 
 
 <button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">Interface : IAgentListener</button>
 <div class="panel">
+<div class="box2">
 <h3>
 <font size="+2"><a id="IAgentListener" class="anchor" href="#IAgentListener" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Interface IAgentListener</font></h3>
 <p>Class Overview It is used as a callback listener and is passed as an argument for GreedyGameAgent.install() method ( install method )</p>
@@ -544,9 +552,14 @@ class GGListner implements IAgentListener {
 </pre>
 
 </div>
+</div>
+
+
+
 
 <button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">IMPORTANT TWEAKS</button>
 <div class="panel">
+<div class="box2">
 <p><h3><a id="importanttweaks" class="anchor" href="#importanttweaks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>IMPORTANT TWEAKS : </h3></p>
 <p><strong>COCOS : Exiting the Game</strong></p>
 
@@ -570,7 +583,7 @@ class GGListner implements IAgentListener {
 <p> you should make sure that you are calling the below function just before exiting </p> 
 <pre> greedyGameAgent.onActivityPaused(); </pre>
 </div>
-
+</div>
 <!--div that ends the box -->
 </div>
 
@@ -598,6 +611,7 @@ class GGListner implements IAgentListener {
 
 <button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">BASIC SETUP</button>
 <div class="panel">
+<div class="box2">
 <p><h3><strong><a id="CocosBasicSetup" class="anchor" href="#CocosBasicSetup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>BASIC SETUP : </strong></h3></p>
 <ul>
 <li>Inside the SDK you downloaded from Github find the android project under Current_sdk/proj.android. Import this project to your IDE.</li>
@@ -611,11 +625,12 @@ Declare the following string in strings.xml file under the res/values folder.
             &lt;string name="greedy_game_profile"&gt;<a id="gameidtext" >11111111</a>&lt;/string&gt;
     &lt;/resources&gt;</pre>
 </div>
-
+</div>
 
 
 <button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">INITIALIZATION OF SDK</button>
 <div class="panel">
+<div class="box2">
 <p><h3><strong><a id="CocosInitialization" class="anchor" href="#CocosInitialization" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>INITIALIZATION OF SDK </strong></h3></p>
 <p>In your Game's Cocos Android Activity's onCreate() function add the following code. Make sure that this initialization is done only inside <code> onCreate() </code> and not in onResume() or any other activity lifecycle methods.</p>
 <p><strong>Snippet 1 : </strong></p>
@@ -680,23 +695,25 @@ void onProgress(float f) {
 }
 </pre>
 </div>
-
+</div>
 
 
 
 <button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">NATIVE AD UNIT INTEGRATION</button>
 <div class="panel">
+<div class="box2">
 <p><strong><a id="CocosNativeAdUnits" class="anchor" href="#CocosNativeAdUnits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
 NATIVE AD UNIT INTEGRATION : </strong></p>
 <p>Native branding in Cocos fits within the SDK and there is no need for additional code. Simply ensure that all units that need to be branded are inside the greedygame folder, found inside assets folder and that you are adding relevant resource names as shown in this snippet here. </p>
 </div>
-
+</div>
 
 
 <button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">FLOAT AD UNIT INTEGRATION</button>
 <div class="panel">
+<div class="box2">
 <p><a id="CocosFloatUnits" class="anchor" href="#CocosFloatUnits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>FLOAT AD UNIT INTEGRATION
-<p><strong>Fetch floating units</strong></p>
+<p><strong>Fetch floating units</strong></p></p>
 <p>Whenever you want to add a float unit to a scene just use the following function with the float unit id generated earlier.</p>
 <pre>greedygame::GreedyGameSDK::fetchAdHead("float-123"); ​</pre>
 
@@ -711,9 +728,14 @@ NATIVE AD UNIT INTEGRATION : </strong></p>
 <p>Whenever you want remove a float ad from the screen just call the following function.</p>
 <pre>greedygame::GreedyGameSDK::removeAdHead(); ​</pre>
 </div>
+</div>
+
+
+
 
 <button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">IMPORTANT TWEAKS</button>
 <div class="panel">
+<div class="box2">
 <p><h3><a id="importanttweaks" class="anchor" href="#importanttweaks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>IMPORTANT TWEAKS : </h3></p>
 <p><strong>COCOS : Exiting the Game</strong></p>
 
@@ -739,10 +761,13 @@ NATIVE AD UNIT INTEGRATION : </strong></p>
 <p> you should make sure that you are calling the below function just before exiting </p> 
 <pre> greedyGameAgent.onActivityPaused(); </pre>
 </div>
+</div>
+
 
 
 <button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">PROGUARD SETTINGS</button>
 <div class="panel">
+<div class="box2">
 <p><h3><strong><a id="proguardsettings" class="anchor" href="#proguardsettings" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PROGUARD SETTINGS</strong></h3></p>
 <p> If you are using Proguard add the following to your Proguard settings. </p>
 <pre>
@@ -757,7 +782,7 @@ NATIVE AD UNIT INTEGRATION : </strong></p>
 } 
 </pre>
 </div>
-
+</div>
 <!-- box div ends here-->
 </div>
 
@@ -788,6 +813,7 @@ NATIVE AD UNIT INTEGRATION : </strong></p>
 
 <button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">BASIC SETUP</button>
 <div class="panel">
+<div class="box2">
 <p><h3><strong><a id="unity-basic-setup" class="anchor" href="#unity-basicsetup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>BASIC SETUP</strong></h3></p>
 
 <p>
@@ -806,10 +832,14 @@ GreedyGameConfigPrefab : As shown in the following screenshot create a GreedyGam
 
 <img id = "unityid" src="images/guide/4_link_unit_ids.png" align='middle' onload="width = this.width/=2;" onclick="modalOnClick('unityid')" alt="Setting up GreedyGameConfigPrefab">
 </div>
+</div>
+
+
 
 
 <button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">NATIVE AD UNIT INTEGRATION</button>
 <div class="panel">
+<div class="box2">
 <p><h3><a id="unity-native-unit" class="anchor" href="#unity-native-unit" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NATIVE UNIT INTEGRATION</h3></p>
 <ul>
 <li>Select the GameObject from your scene which uses the texture that was uploaded to the panel.</li>
@@ -825,10 +855,14 @@ GreedyGameConfigPrefab : As shown in the following screenshot create a GreedyGam
 
 <p>In the namespace field add the appropriate native ad unit id that you have added into the GreedyGameConfigPrefab. Once you do that the yellow color will change to green which means its good to go. </p>
 </div>
+</div>
+
+
 
 
 <button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">FLOAT UNIT INTEGRATION</button>
 <div class="panel">
+<div class="box2">
 <p><h3><a id="unity-float-unit" class="anchor" href="#unity-float-unit" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>FLOAT UNIT INTEGRATION USING CODE </h3></p>
 
 <p>Select the scene where you need the FloatAd-Unit to be displayed. Wherever you want to fetch the Float Ad Unit, just use the following function from GreedyGame.Runtime.Common
@@ -849,22 +883,24 @@ To show Float Ad Unit</p>
 <pre>GreedyAdManager.Instance.RemoveAllAdHead ();</pre>
 
 
-
+</div>
 </div>
 
 
 
 <button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">ANDROID SETUP</button>
 <div class="panel">
+<div class="box2">
 <p><h4><strong>ANDROID SETUP</strong></h4></p>
 
 <p>[For users running a version of Unity earlier than 5.0] Navigate to Temp/StagingArea of your project directory and copy AndroidManifest.xml to Assets/Plugins/Android. Add the following tag to the AndroidManifest.xml file. And set application hardwareAccelerated=true </p>
 </div>
-
+</div>
 
 
 <button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">ADVANCED CUSTOMIZATION DOCUMENTATION</button>
 <div class="panel">
+<div class="box2">
 <p><h4><strong>ADVANCED CUSTOMIZATION DOCUMENTATION</strong></h4></p>
 
 <p><strong>Use the following imports</strong></p>
@@ -933,11 +969,14 @@ void OnGreedyEvent(RuntimeEvent greedy_events) {
 }
 </pre>
 </div>
+</div>
+
 
 
 
 <button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">MARSHMALLOW COMPLIANCE</button>
 <div class="panel">
+<div class="box2">
 <p><h3><strong>MARSHMALLOW COMPLIANCE : </strong></h3></p>
 <p><strong>CALLBACK METHOD IN GreedyAndroidAgent project WRAPPER :</strong> <code> onPermissionsUnavailable(ArrayList permissions) </code></p>
 
@@ -954,17 +993,22 @@ void OnGreedyEvent(RuntimeEvent greedy_events) {
 </ul>
 <blockquote> The above strings itself are returned in the argument if they are not available.</blockquote>>
 </div>
+</div>
+
+
 
 <button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">VIDEO TUTORIAL</button>
 <div class="panel">
+<div class="box2">
 <iframe   width="640px" height="480px" allowfullscreen="allowfullscreen"
 src="https://www.youtube.com/embed/L8Lq5UIbd68?autoplay=0">
 </iframe>
 </div>
-
+</div>
 
 <button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">IMPORTANT TWEAKS</button>
 <div class="panel">
+<div class="box2">
 <p><h3><a id="importanttweaks" class="anchor" href="#importanttweaks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>IMPORTANT TWEAKS : </h3></p>
 <p><strong>COCOS : Exiting the Game</strong></p>
 
@@ -989,13 +1033,14 @@ src="https://www.youtube.com/embed/L8Lq5UIbd68?autoplay=0">
 <p> you should make sure that you are calling the below function just before exiting </p> 
 <pre> greedyGameAgent.onActivityPaused(); </pre>
 </div>
-
+</div>
 
 
 
 
 <button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">PROGUARD SETTINGS</button>
 <div class="panel">
+<div class="box2">
 <p><h3><strong><a id="proguardsettings" class="anchor" href="#proguardsettings" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PROGUARD SETTINGS</strong></h3></p>
 <p> If you are using Proguard add the following to your Proguard settings. </p>
 <pre>
@@ -1011,6 +1056,9 @@ src="https://www.youtube.com/embed/L8Lq5UIbd68?autoplay=0">
 </pre>
 </div>
 </div>
+</div>
+
+
 
 <div class="box" > 
 <p><strong><h3><a id="mandatorymanifest" class="anchor" href="#mandatorymanifest" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Mandatory Manifest Requirements</h3></strong></p>
@@ -1168,7 +1216,7 @@ compile 'com.greedygame.android:greedynative:8.1'
                 alert("The syntax for float unit that you entered is wrong. Float unit id should start with 'float-'");
                 return;
             } 
-           	document.getElementById('floatCodeHolder').innerHTML = "floatAdLayout.fetchHeadAd(&quot"+input+"&quot)";
+           	document.getElementById('floatCodeHolder').innerHTML = "<code>floatAdLayout.fetchHeadAd(&quot"+input+"&quot)</code>";
            	
 
         }
