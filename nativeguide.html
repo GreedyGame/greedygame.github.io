@@ -100,7 +100,7 @@ function pictureMin(objectid) {
 <center><h4><strong><a href="https://github.com/GreedyGame/android-native-plugin/releases/latest"> GITHUB LINK </a></strong></h4></center>
 <!-- <ul>
 <li><strong><a href="#native-initsdk" class="smoothScroll">INITIALIZATION OF SDK</a> </strong></li>
-<li><strong><a href="#native-native-ad-units" class="smoothScroll">NATIVE AD UNIT INTEGRATION</a> </strong></li>
+<li><strong><a href="#native-native-ad-units" class="smoothScroll">NATIVE UNIT INTEGRATION</a> </strong></li>
 <li><strong><a href="#native-float-ad-units" class="smoothScroll">FLOAT UNIT INTEGRATION</a> </strong></li>
 <li><strong><a href="#NativeOtherUtilities" class="smoothScroll">OTHER UTILITIES METHOD</a> </strong></li>
 <li><strong><a href="#IAgentListener" class="smoothScroll">Interface IAgentListener</a> </strong></li>
@@ -199,10 +199,10 @@ NOTE
 
 
 
-<button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">NATIVE AD UNIT INTEGRATION</button>
+<button class="accordion ctrl-standard typ-subhedsmall fx-bubbleDown">NATIVE UNIT INTEGRATION</button>
 <div class="panel">
 <div class="box2">
-<p><h3><strong><a id="native-native-ad-units" class="anchor" href="#native-nativeadunits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NATIVE AD UNIT INTEGRATION : </strong></h3></p>
+<p><h3><strong><a id="native-native-ad-units" class="anchor" href="#native-nativeadunits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NATIVE UNIT INTEGRATION : </strong></h3></p>
 
 <p>When init call as detailed above, is made, it marks all of the game's assets that needs to be branded. When a campaign is available, relevant native units are downloaded and stored in the memory of the user’s device. So all you need to do is </p>
 <ul>
@@ -348,7 +348,7 @@ of assets have failed and
 no ads can be served in this session.*/</p>
 }
 </pre>
-<blockquote>Important : both <code> onDownload() </code> and <code> onError() </code> are called only after you get a callback on onInit(). If you get CAMPAIGN_NOT_AVAILABLE in <code> onInit() </code> function then no further callbacks will be supplied to <code> onSuccess() </code> and <code> onError() </code> .</blockquote>
+<blockquote>Important : both <code> onDownload() </code> and <code> onError() </code> are called only after you get a callback on <code> onInit() </code>. If you get CAMPAIGN_NOT_AVAILABLE in <code> onInit() </code> function then no further callbacks will be supplied to <code> onSuccess() </code> and <code> onError() </code> .</blockquote>
 
 
 <p><strong>Callback - when there are unavailable permissions</strong></p>
@@ -361,8 +361,6 @@ no ads can be served in this session.*/</p>
 <ul>
 <li>Manifest.permission.ACCESS_COARSE_LOCATION</li>
 <li>Manifest.permission.WRITE_EXTERNAL_STORAGE</li>
-<li>Manifest.permission.GET_ACCOUNTS</li>
-<li>Manifest.permission.READ_PHONE_STATE</li>
 </ul>
 <blockquote>Note : The above strings itself are returned in the argument if they are not available. </blockquote>
 

@@ -103,24 +103,6 @@ function pictureMin(objectid) {
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-
-
-<div class="floatingContainer">
-  <div class="subActionButton person">
-    <p class="floatingText"><span class="floatingTextBG">Add Contact</span></p>
-  </div>
-  <div class="subActionButton mapMarker">
-    <p class="floatingText"><span class="floatingTextBG">Add Address</span></p>
-  </div>
-  <div class="subActionButton note">
-    <p class="floatingText"><span class="floatingTextBG">Add Note</span></p>
-  </div>
-  <div class="actionButton"><p class="floatingText"><span class="floatingTextBG">Add Customer</span></p></div>
-</div>
-
-<div class="toasts"><p class="floatingText">Added Note</p></div>
-
-
             <div  class="box"    >
             <h2>  
            <a id="greedygame---integration-guide" class="anchor" href="#greedygame---integration-guide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><font size="+3"><center>GREEDYGAME - INTEGRATION GUIDE</center></font></h2>
@@ -131,22 +113,30 @@ function pictureMin(objectid) {
 <h4 class="anchor"> <center >GreedyGame powers you to merge branding experiences within your application. This creates a harmonious blend of effective branding, a seamless user experience and effective monetization.</center></h4>
 
 
-<h4>
-<a id="how-to-start-monetizing-with-greedygame-" class="anchor" href="#how-to-start-monetizing-with-greedygame-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to start Monetizing with GreedyGame :</h4>
-
-<p><strong>Signup :</strong> 
-Go to publisher.greedygame.com and signup for your account. Simply verify your account using the link you receive via email. If you need any help around this, we’re happy to help. Just drop us a note at <a href="mailto:support@greedygame.com">support@greedygame.com</a>. </p>
-
 
 <h3>
 <a id="lets-familiarize-the-following-terms" class="anchor" href="#lets-familiarize-the-following-terms" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>IMPORTANT TERMS</h3>
 <p > Before we get started with the integration, let’s brush through the definitions of some important terms that we’ll see referenced regularly. </p>
 
+<p><strong>Publisher Panel:</strong> Your one stop interface for integration, setup and day-to-day reporting. 
+ </p>
 
-<p><strong>Native-Units :</strong> These are non clickable textures inside your game that are dynamically branded at runtime. The native unit is seamlessly blended into the in-game textures, so the look and feel of the textures remain the same and are simply enhanced with a branding experience. </p>
 
-<p><strong>Float-Units :</strong> This is a clickable ad-unit that hovers in at non-intrusive parts of the user’s screen. When a user clicks on this unit, it expands into a dynamic HTML window called the Engagement Window. This unit is highly adaptable and can be created to fit in contextually with the app. E.g. a cricket ball as a float unit in a cricket game or a helmet in a bike racing game.</p>
+<p><strong>Native-Units :</strong> These are non clickable textures inside your game that are dynamically branded at runtime. The native unit is seamlessly blended into the in-game textures and so, the textures remain the same and are simply enhanced with branding.
+ </p>
+<video align='middle' controls="controls"  onload="this.width/=1.5" loop="loop">  
+    <source src="videos/ggnative.mp4" type="video/mp4" />   
+    <!-- <track src="subtitles_en.vtt" kind="subtitles" srclang="en" label="English"> -->     
+    Nav doesn't support html5 video
+</video> 
 
+
+
+
+
+<p><strong>Float-Units :</strong> This is a clickable ad-unit that hovers in a non-intrusive parts of the user’s screen. When a user clicks on this unit, it expands into a dynamic window called the ‘Engagement Window’. Float units don’t require any changes to in game objects.</p>
+
+<!--
 <div id="cf">
   <img class="bottom" src="images/guide/mock-with ads-edit.png" />
   <img class="top" src= "images/guide/crciket_nobrand_720.png"/>
@@ -154,6 +144,7 @@ Go to publisher.greedygame.com and signup for your account. Simply verify your a
 <div style="text-align:center;">
 <h4><strong> Scroll over the image to see native branding </strong></h4>
 </div>
+-->
 <!-- The Modal -->
 <div id="myModal" class="modal">
 <!-- The Close Button -->
@@ -169,41 +160,68 @@ Go to publisher.greedygame.com and signup for your account. Simply verify your a
 
 
 
-<p><strong>Engagement Window :</strong> The Engagement Window is a WebView activity that displays a webpage, that opens upon clicking the float unit. Users interact with the brand through meaningful engagement experiences within this window. </p>
-
+<p><strong>Engagement Window :</strong> The Engagement Window is a screen that expands when a user clicks on the ‘float-unit’. Users interact with the brand through meaningful engagement experiences within this window.
+ </p>
+<video align="middle" onload="this.width/=1.5" controls="controls"  loop = "loop">  
+    <source src="videos/ggfloat.mp4" type="video/mp4" />   
+    <!-- <track src="subtitles_en.vtt" kind="subtitles" srclang="en" label="English"> -->     
+    Nav doesn't support html5 video
+</video> 
+<!--
 <div style="text-align:center;">
 <img id="nativeengage" src="images/guide/engagement window.png" align='middle' onload="this.width/=1.5" onclick="modalOnClick('nativeengage')" alt="Engagement window that opens on clicking float unit">
 </div>
-
+-->
 <p><strong>Campaigns :</strong> An exhaustive list of the ads that are eligible to run on your games. This list may not contain any campaigns during setup and testing but we promise to fill it up once you’re done integrating. </p>
 
+
+<h4>
+<a id="how-to-start-monetizing-with-greedygame-" class="anchor" href="#how-to-start-monetizing-with-greedygame-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to start Monetizing with GreedyGame :</h4>
+
+<p><strong>Signup :</strong> 
+Go to publisher.greedygame.com and signup for your account. Simply verify your account using the link you receive via email. If you need any help around this, we’re happy to help. Just drop us a note at <a href="mailto:support@greedygame.com">support@greedygame.com</a>. </p>
+
+
 <p><strong>Creating a game-id :</strong>
-<ul>
-<li><p> Step 1 : Click on the <strong> YOUR GAMES </strong> tab.</p></li>
-<li><p> Step 2 : Click <strong> NEW GAME </strong></p></li>
-<li><p> Step 3 : Fill in the requested details.</p></li>
-</ul>
 </p>
 
 <div style="text-align:center;">
-<img src="images/guide/creategame-edit1.png" id="newgame-created" align='middle' onload="this.width/=1.5" onclick="modalOnClick('newgame-created')" alt="Create a new Game-Profile ID" >
+<img src="images/guide/1.jpg" id="newgame-created" align='middle' onload="this.width/=1.5" onclick="modalOnClick('newgame-created')" alt="Create a new Game-Profile ID" >
 </div>
 
+<p> This will generate a new Game ID(game profile id) which needs to be used at the time of
+integration. </p>
+
 <blockquote>
-<p>NB: if the game is not yet in playstore then you can use a dummy URL instead of playstore URL.</p>
+<p>NB: if you haven’t launched your app onto the playstore yet, simply use any valid playstore URL.  Be sure to switch it back to the correct URL once you’ve launched.</p>
 </blockquote>
 
 <div style="text-align:center;">
-<img src="images/guide/created-edited2.png" id="panel-created" align='middle' onload="this.width/=1.5" onclick="modalOnClick('panel-created')" alt="Publisher Panel" >
+<img src="images/guide/2.jpg" id="panel-created" align='middle' onload="this.width/=1.5" onclick="modalOnClick('panel-created')" alt="Publisher Panel" >
 </div>
 
-<p><strong>Identifying good ad-spots and uploading assets :</strong> Upload the textures used in your game after you create the game id. You can refer figure 2 point no. 4 for doing this. For each screen that needs a FloatAd unit create a seperate float unit by clicking on create float unit button as shown at point 3.</p>
+<p><strong>Uploading assets for ad-spots :</strong> Once you’ve found the right spots on your game, it’s time to upload the textures. Follow these simple steps(also referenced in the image below)
+</p>
 
 <blockquote>
 <p>NB : Note down the unit-id generated when you uploaded the textures and the float-id’s that were generated. </p>
 </blockquote>
-
 </div>
+
+<div class="box3">
+<div style="text-align:center;">
+<h3>
+<font size="+3"><center>INTEGRATION WIZARD</center></font></h3>
+<h3>
+<p> Great job on the setup so far! To make the rest of the integration an absolute breeze for you, we’ve set up an integration wizard on your publisher panel.
+
+Once you’ve logged in, simply click on the ‘help’ dropdown menu on the top of your page and select ‘SDK Integration Wizard’ and we’ll walk you through the integration from the comfort of your own publisher panel.
+</p>
+</h3>
+</div>
+</div>
+
+
 
 
 
@@ -212,13 +230,17 @@ Go to publisher.greedygame.com and signup for your account. Simply verify your a
 <h3>
 <font size="+3"><center>SELECT YOUR PLATFORM</center></font></h3>
 <h3>
+<p> If you’d like to manually review our integration guide for specific topics, please select the platform that you’re currently using.
+</p>
+</h3>
+<h3>
 <a   id="greedygame-helps-you-monetize-in-the-following-3-platforms-select-your-platform" class="anchor" href="#greedygame-helps-you-monetize-in-the-following-3-platforms-select-your-platform" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>GreedyGame helps you monetize in the following 3 platforms.</h3>
 </div>
 <div style="text-align:center;">
   
     
-    <a href="/nativeguide.html" ><button class="ctrl-standard typ-subhed fx-bubbleDown">COCOS2DX</button></a>
-    <a href="#unity-integration-guide" ><button class="ctrl-standard typ-subhed fx-bubbleDown">UNITY</button></a>
+    <a href="http://greedygame.github.io/unityguide.html" ><button class="ctrl-standard typ-subhed fx-bubbleDown">COCOS2DX</button></a>
+    <a href="http://greedygame.github.io/cocosguide.html" ><button class="ctrl-standard typ-subhed fx-bubbleDown">UNITY</button></a>
     <a href="http://greedygame.github.io/nativeguide.html" ><button class="ctrl-standard typ-subhed fx-bubbleDown">NATIVE-ANDROID</button></a>
     
     </div>
