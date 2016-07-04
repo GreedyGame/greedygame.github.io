@@ -1,394 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Arya' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
-    <script src="/javascripts/main.js" type="text/javascript"></script>
-    <script src="/javascripts/fabbutton.js" type="text/javascript"></script>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-     <link rel="stylesheet" type="text/css" href="stylesheets/greedy-custom.css" media="screen">
-     <link rel="stylesheet" type="text/css" href="stylesheets/greedy-custom.css" media="screen">
-     <link rel="stylesheet" type="text/css" href="stylesheets/startrekbuttons.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/modalgg.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/fabbutton.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script type="text/javascript" src="javascripts/smoothscroll.js"></script>
 
-<script>
-
-var isGameIDAvailable = false;
-
-
-
-function openNav() {
-
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("hoverhelper").style.width = "0px";
-    document.getElementById("main").style.marginLeft = "250px";
-    
-}
-
-/* Set the width of the side navigation to 0 */
-function closeNav() {
-     
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("hoverhelper").style.width = "60px";
-    document.getElementById("main").style.marginLeft = "0px";
-}
-
-/* Set the color to something else */
-function changeColor() {
-  document.getElementById("issuesInIntegration").style.color = "#f00";
-}
-
-function changeColorBack() {
-  document.getElementById("issuesInIntegration").style.color = "#818181";
-}
-
-
-function pictureMax(objectid) {
-  document.getElementById(objectid).style.width = document.getElementById(objectid).style.width * 2;
-}
-
-function pictureMin(objectid) {
-  document.getElementById(objectid).style.width = document.getElementById(objectid).style.width /2;
-}
-</script>
-
-
- 
-
-
-
-
-    <!--[if lt IE 9]>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <title>Minimal by Steve Smith</title>
+  <link rel="stylesheet" href="stylesheets/styles.css">
+  <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+  <meta name="viewport" content="width=device-width">
+  <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-<!--
-<div id="mySidenav" class="sidenav">
-  <a class="sideclose" href="javascript:void(0)" onclick="closeNav()">&times;</a>
-  
+</head>
 
-  
-  <a href="#how-to-start-monetizing-with-greedygame-" class="smoothScroll">INITIAL SETUP</a>
-  <a href="#native-integration-guide" class="smoothScroll" >NATIVE INTEGRATION</a>
-  <a href="#cocos-integration-guide" class="smoothScroll">COCOS INTEGRATION</a>
-  <a href="#unity-integration-guide" class="smoothScroll">UNITY INTEGRATION</a>
-  <a href="#importanttweaksoverall" class="smoothScroll">ADDITIONAL TWEAKS</a>
-  <a href="#gradledependency" class="smoothScroll">GRADLE DEPENDENCY</a>
-  <a href="#proguardsettingsoverall" class="smoothScroll">PROGUARD SETTINGS</a>
-  <a href="#verifying-integration" onmouseover="changeColor()" onmouseout="changeColorBack()"  id="issuesInIntegration" class="smoothScroll">ISSUES IN INTEGRATION</a>
-
-</div>
--->
-
-  <title>GREEDYGAME INTEGRATION GUIDE by GreedyGame</title>
-  </head>
-<div id="main"
-  <body>
+<body>
+  <div class="wrapper">
     <header>
-      <div class="inner">
-        <h1> GREEDYGAME INTEGRATION GUIDE  </h1>
-        <h2>Ads that people love !</h2>
-        <a href="https://github.com/GreedyGame" class="button"><small>Follow me on</small> GitHub</a>
-      </div>
+      <h1>GreedyGame Integration Guide</h1>
+      <p>A quick introduction to integrate SDK</p>
+      <p class="view"><a href="http://publisher.greedygame.com" target="_blank">SignUp on Publisher Dashboard <small>publisher.greedygame.com</small></a></p>
+      <p class="view"><a href="https://github.com/GreedyGame" target="_blank">View SDK's project on GitHub <small>github.com/GreedyGame</small></a></p>
+      <ul>
+        <li><a href="https://github.com/GreedyGame/unity-plugin" target="_blank"><strong>Unity3D</strong> SDK</a></li>
+        <li><a href="https://github.com/GreedyGame/cocos2dx-plugin" target="_blank"><strong>Cocos2d-x</strong> SDK</a></li>
+        <li><a href="https://github.com/GreedyGame/android-native-plugin" target="_blank"><strong>Android</strong> SDK</a></li>
+      </ul>
     </header>
-<!-- Use any element to open the sidenav -->
-<button id="hoverhelper" onmouseover="openNav()" class = "myButton">MENU</button>
-
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-            <div  class="box"    >
-            <h2>  
-           <a id="greedygame---integration-guide" class="anchor" href="#greedygame---integration-guide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><font size="+3"><center>GREEDYGAME - INTEGRATION GUIDE</center></font></h2>
-        
-
-<a id="ads-that-people-love" class="anchor" href="#ads-that-people-love" aria-hidden="true" color="f00"><span aria-hidden="true" class="octicon octicon-link"></span></a><center>Ads that people love</center>
-
-<h4 class="anchor"> <center >GreedyGame powers you to merge branding experiences within your application. This creates a harmonious blend of effective branding, a seamless user experience and effective monetization.</center></h4>
-
-
-
-<h3>
-<a id="lets-familiarize-the-following-terms" class="anchor" href="#lets-familiarize-the-following-terms" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>IMPORTANT TERMS</h3>
-<p > Before we get started with the integration, let’s brush through the definitions of some important terms that we’ll see referenced regularly. </p>
-
-<p><strong>Publisher Panel:</strong> Your one stop interface for integration, setup and day-to-day reporting. 
- </p>
-
-
-<p><strong>Native-Units :</strong> These are non clickable textures inside your game that are dynamically branded at runtime. The native unit is seamlessly blended into the in-game textures and so, the textures remain the same and are simply enhanced with branding.
- </p>
-<video align='middle' controls="controls"  onload="this.width/=1.5" loop="loop" autoplay="autoplay">  
-    <source src="videos/ggnative.mp4" type="video/mp4" />   
-    <!-- <track src="subtitles_en.vtt" kind="subtitles" srclang="en" label="English"> -->     
-    Nav doesn't support html5 video
-</video> 
-
-
-
-
-
-<p><strong>Float-Units :</strong> This is a clickable ad-unit that hovers in a non-intrusive parts of the user’s screen. When a user clicks on this unit, it expands into a dynamic window called the ‘Engagement Window’. Float units don’t require any changes to in game objects.</p>
-
-<!--
-<div id="cf">
-  <img class="bottom" src="images/guide/mock-with ads-edit.png" />
-  <img class="top" src= "images/guide/crciket_nobrand_720.png"/>
-</div>
-<div style="text-align:center;">
-<h4><strong> Scroll over the image to see native branding </strong></h4>
-</div>
--->
-<!-- The Modal -->
-<div id="myModal" class="modal">
-<!-- The Close Button -->
-  <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
-<!-- Modal Content (The Image) -->
-
-  <img class="modal-content" id="imgmodal">
-  <div id="caption"></div>
-<!-- Modal Caption (Image Text) -->
-  
-</div>
-
-
-
-
-<p><strong>Engagement Window :</strong> The Engagement Window is a screen that expands when a user clicks on the ‘float-unit’. Users interact with the brand through meaningful engagement experiences within this window.
- </p>
-<video align="middle" onload="this.width/=1.5" controls="controls"  loop = "loop" autoplay="autoplay">  
-    <source src="videos/ggfloat.mp4" type="video/mp4" />   
-    <!-- <track src="subtitles_en.vtt" kind="subtitles" srclang="en" label="English"> -->     
-    Nav doesn't support html5 video
-</video> 
-<!--
-<div style="text-align:center;">
-<img id="nativeengage" src="images/guide/engagement window.png" align='middle' onload="this.width/=1.5" onclick="modalOnClick('nativeengage')" alt="Engagement window that opens on clicking float unit">
-</div>
--->
-<p><strong>Campaigns :</strong> An exhaustive list of the ads that are eligible to run on your games. This list may not contain any campaigns during setup and testing but we promise to fill it up once you’re done integrating. </p>
-
-
-<h4>
-<a id="how-to-start-monetizing-with-greedygame-" class="anchor" href="#how-to-start-monetizing-with-greedygame-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to start Monetizing with GreedyGame :</h4>
-
-<p><strong>Signup :</strong> 
-Go to publisher.greedygame.com and signup for your account. Simply verify your account using the link you receive via email. If you need any help around this, we’re happy to help. Just drop us a note at <a href="mailto:support@greedygame.com">support@greedygame.com</a>. </p>
-
-
-<p><strong>Creating a game-id :</strong>
-</p>
-
-<div style="text-align:center;">
-<img src="images/guide/1.jpg" id="newgame-created" align='middle' onload="this.width/=1.5" onclick="modalOnClick('newgame-created')" alt="Create a new Game-Profile ID" >
-</div>
-
-<p> This will generate a new Game ID(game profile id) which needs to be used at the time of
-integration. </p>
-
-<blockquote>
-<p>NB: if you haven’t launched your app onto the playstore yet, simply use any valid playstore URL.  Be sure to switch it back to the correct URL once you’ve launched.</p>
-</blockquote>
-
-<div style="text-align:center;">
-<img src="images/guide/2.jpg" id="panel-created" align='middle' onload="this.width/=1.5" onclick="modalOnClick('panel-created')" alt="Publisher Panel" >
-</div>
-
-<p><strong>Uploading assets for ad-spots :</strong> Once you’ve found the right spots on your game, it’s time to upload the textures. Follow these simple steps(also referenced in the image below)
-</p>
-
-<blockquote>
-<p>NB : Note down the unit-id generated when you uploaded the textures and the float-id’s that were generated. </p>
-</blockquote>
-</div>
-
-<div class="box3">
-<div style="text-align:center;">
-<h3>
-<font size="+3"><center>INTEGRATION WIZARD</center></font></h3>
-<h3>
-<p> Great job on the setup so far! To make the rest of the integration an absolute breeze for you, we’ve set up an integration wizard on your publisher panel.
-
-Once you’ve logged in, simply click on the ‘help’ dropdown menu on the top of your page and select ‘SDK Integration Wizard’ and we’ll walk you through the integration from the comfort of your own publisher panel.
-</p>
-</h3>
-</div>
-</div>
-
-
-
-
-
-<div class="box3">
-<div style="text-align:center;">
-<h3>
-<font size="+3"><center>SELECT YOUR PLATFORM</center></font></h3>
-<h3>
-<p> If you’d like to manually review our integration guide for specific topics, please select the platform that you’re currently using.
-</p>
-</h3>
-<h3>
-<a   id="greedygame-helps-you-monetize-in-the-following-3-platforms-select-your-platform" class="anchor" href="#greedygame-helps-you-monetize-in-the-following-3-platforms-select-your-platform" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>GreedyGame helps you monetize in the following 3 platforms.</h3>
-</div>
-<div style="text-align:center;">
-  
-    
-    <a href="http://greedygame.github.io/unityguide.html" ><button class="ctrl-standard typ-subhed fx-bubbleDown">COCOS2DX</button></a>
-    <a href="http://greedygame.github.io/cocosguide.html" ><button class="ctrl-standard typ-subhed fx-bubbleDown">UNITY</button></a>
-    <a href="http://greedygame.github.io/nativeguide.html" ><button class="ctrl-standard typ-subhed fx-bubbleDown">NATIVE-ANDROID</button></a>
-    
-    </div>
-</div>
-
-</div>
-<script type="text/javascript">
-        function getGameID() {
-
-            var input = document.getElementById("gameidinput").value;
-            if (input.length != 8) {
-                alert("The game id that gets generated from panel.greedygame.com is 8 digits long. Please correct your game id ");
-                return;
-            }
-           document.getElementById("gameidheading").innerHTML = "GameProfileId : " + input ;
-           isGameIDAvailable = true;
-
-           	document.getElementById('gameidtext').innerHTML = input;
-           	document.getElementById('gameidtext2').innerHTML = "you can copy paste the above code directly into your strings.xml file";
-
-        }
-    </script>
-
-
-    <script type="text/javascript">
-        function getFloatCode() {
-
-            var input = document.getElementById("floatInput").value;
-            var pos = input.indexOf("float-");
-            if (pos == -1 || pos!=0) {
-                alert("The syntax for float unit that you entered is wrong. Float unit id should start with 'float-'");
-                return;
-            } 
-           	document.getElementById('floatCodeHolder').innerHTML = "<code>floatAdLayout.fetchHeadAd(&quot"+input+"&quot)</code>";
-           	
-
-        }
-    </script>
-
-
-    <script type="text/javascript">
-        function getFloatCodeCocos() {
-
-            var input = document.getElementById("floatCocosInput").value;
-            var pos = input.indexOf("float-");
-            if (pos == -1 || pos!=0) {
-                alert("The syntax for float unit that you entered is wrong. Float unit id should start with 'float-'");
-                return;
-            } 
-           	document.getElementById('floatCocosCodeHolder').innerHTML = "greedygame::GreedyGameSDK::fetchAdHead(&quot"+input+"&quot);";
-           	
-
-        }
-    </script>
-
-
-<script>
-//javascript for modal
-// Get the modal
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var modal = document.getElementById('myModal');
-var modalImg = document.getElementById("imgmodal");
-var captionText = document.getElementById("caption");
-function modalOnClick(id) {
-	var clickedimg = document.getElementById(id);
-    modal.style.display = "block";
-    modalImg.src = clickedimg.src;
-    modalImg.alt = clickedimg.alt;
-    captionText.innerHTML = clickedimg.alt;
-}
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-</script>
-
-<script>
-function scrollTo(to, duration) {
-    if (document.body.scrollTop == to) return;
-    var diff = to - document.body.scrollTop;
-    var scrollStep = Math.PI / (duration / 10);
-    var count = 0, currPos;
-    start = element.scrollTop;
-    scrollInterval = setInterval(function(){
-        if (document.body.scrollTop != to) {
-            count = count + 1;
-            currPos = start + diff * (0.5 - 0.5 * Math.cos(count * scrollStep));
-            document.body.scrollTop = currPos;
-        }
-        else { clearInterval(scrollInterval); }
-    },10);
-}
-
-function test(elID)
-{
-    var dest = document.getElementById(elID);
-    scrollTo(dest.offsetTop, 500);
-}
-</script>
-
-<script type="text/javascript">
-/* Toggle between adding and removing the "active" and "show" classes when the user clicks on one of the "Section" buttons. The "active" class is used to add a background color to the current button when its belonging panel is open. The "show" class is used to open the specific accordion panel */
-var acc = document.getElementsByClassName("accordion");
-var acchide = document.getElementsByClassName("accordion-hide");
-var i;
-var j;
-
-for (i = 0; i < acc.length; i++) {
-    acc[i].onclick = function(){
-        this.classList.toggle("active");
-        this.nextElementSibling.classList.toggle("show");
-    }
-}
-</script>
-
-<script type="text/javascript">
-$('.floatingContainer').hover(function(){
-  //$('.subActionButton').addClass('display');
-}, function(){
-  $('.subActionButton').removeClass('display');
-  $('.actionButton').removeClass('open');
-});
-$('.subActionButton').hover(function(){
-  $(this).find('.floatingText').addClass('show');
-}, function(){
-  $(this).find('.floatingText').removeClass('show');
-});
-
-$('.actionButton').hover(function(){
-  $(this).addClass('open');
-  $(this).find('.floatingText').addClass('show');
-  $('.subActionButton').addClass('display');
-}, function(){
-  $(this).find('.floatingText').removeClass('show');
-});
-</script>
-
-        </section>
-
-        
-      </div>
-    </div>
-
-  
-  </body>
+    <section>
+      <h1>Ads that people love !</h1>
+      <p>GreedyGame powers you to merge branding experiences within your application. This creates a harmonious blend of effective branding, a seamless user experience and effective monetization.</p>
+      <h2><a name="importantterms" href="#importantterms">Important Terms</a></h2>
+      <p>Before we get started with the integration, let’s brush through the definitions of some important terms that we’ll see referenced regularly.</p>
+      <h3><a name="publisherpanel" href="#publisherpanel">Publisher Panel</a></h3>
+      <p>Your one stop interface for integration, setup and day-to-day reporting.</p>
+      <h3><a name="nativeunits" href="#nativeunits">NativeUnits</a></h3>
+      <p>These are non clickable textures inside your game that are dynamically branded at runtime. The native unit is seamlessly blended into the in-game textures and so, the textures remain the same and are simply enhanced with branding.
+      </p>
+      <p>
+        <video align="middle" loop="loop" autoplay="autoplay" style="width:100%;">
+          <source src="http://greedygame.github.io/videos/ggnative.mp4" type="video/mp4">
+          <!-- <track src="subtitles_en.vtt" kind="subtitles" srclang="en" label="English"> -->
+          Nav doesn't support html5 video
+        </video>
+      </p>
+      <h3><a name="floatunits" href="#floatunits">FloatUnits</a></h3>
+      <p>This is a clickable ad-unit that hovers in a non-intrusive parts of the user’s screen. When a user clicks on this unit, it expands into a dynamic window called the <a href="#engagementwindow">Engagement Window</a>. Float units don’t require any changes to in game objects.</p>
+      <h3><a name="engagementwindow" href="#engagementwindow">Engagement Window</a></h3>
+      <p>The Engagement Window is a screen that expands when a user clicks on the <a href="#floatunits">float-unit</a>. Users interact with the brand through meaningful engagement experiences within this window.</p>
+      <p>
+        <video align="middle" loop="loop" autoplay="autoplay" style="width:100%;">
+          <source src="http://greedygame.github.io/videos/ggfloat.mp4" type="video/mp4">
+          <!-- <track src="subtitles_en.vtt" kind="subtitles" srclang="en" label="English"> -->
+          Nav doesn't support html5 video
+        </video>
+      </p>
+      <h3><a name="campaigns" href="#campaigns">Campaigns</a></h3>
+      <p>An exhaustive list of the ads that are eligible to run on your games. This list may not contain any campaigns during setup and testing but we promise to fill it up once you’re done integrating.</p>
+      <h2>How to start Monetizing with GreedyGame?</h2>
+      <h3>Signup</h3>
+      <p>Go to <a href="http://publisher.greedygame.com" target="_blank">publisher.greedygame.com</a> and signup for your account. Simply verify your account using the link you receive via email.</p>
+      <p>If you need any help around this, we’re happy to help. Just drop us a note at <a href="mailto:support@greedygame.com">support@greedygame.com</a>.</p>
+      <h3>Creating a game-id</h3>
+      <p><a href="http://greedygame.github.io/images/guide/1.jpg" target="_blank"><img src="http://greedygame.github.io/images/guide/1.jpg" style="width:100%;" /></a>
+        <br/>This will generate a new Game ID(game profile id) which needs to be used at the time of integration.</p>
+      <blockquote>
+        <p>
+          if you haven’t launched your app onto the playstore yet, simply use any valid playstore URL. Be sure to switch it back to the correct URL once you’ve launched.</p>
+      </blockquote>
+      <h3>Uploading assets for ad-spots</h3>
+      <p>Once you’ve found the right spots on your game, it’s time to upload the textures. Follow these simple steps(also referenced in the image below)</p>
+      <p>
+        <a href="http://greedygame.github.io/images/guide/2.jpg" target="_blank"><img src="http://greedygame.github.io/images/guide/2.jpg" style="width:100%;" /></a>
+      </p>
+      <h2><a name="quickwizard" href="#quickwizard">Quick Integration Wizard</a></h2>
+      <p>Great job on the setup so far! To make the rest of the integration an absolute breeze for you, we’ve set up an integration wizard on your publisher panel. Once you’ve logged in, simply click on the ‘help’ dropdown menu on the top of your page and select ‘SDK Integration Wizard’ and we’ll walk you through the integration from the comfort of your own publisher panel.</p>
+    </section>
+    <footer>
+      <p>We’re happy to help. Just drop us a note at <a href="mailto:support@greedygame.com">support@greedygame.com</a></p>
+      <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+    </footer>
   </div>
+  <script src="javascripts/scale.fix.js"></script>
+</body>
+
 </html>
